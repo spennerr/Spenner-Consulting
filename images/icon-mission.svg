@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Mission">
+  <rect width="120" height="120" rx="26" fill="#121821"/>
+  <rect x="1" y="1" width="118" height="118" rx="25" fill="none" stroke="#1f2a36" stroke-width="2"/>
+  <path d="M24 76 L44 56 L58 70 L84 44" fill="none" stroke="#2ebd6b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M68 44 H84 V60" fill="none" stroke="#2ebd6b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="76" r="5" fill="#2ebd6b" opacity="0.4"/>
+</svg>

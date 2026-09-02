@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt - Spenner Consulting</title>
+  <meta name="description" content="Kontakta Spenner Consulting för projektledning och managementkonsulting. Jag svarar gärna på dina frågor.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header & Navigation ===== -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Huvudnavigering">
+      <a class="logo" href="index.html" aria-label="Spenner Consulting - startsida">
+        <img src="images/logo.png" alt="Spenner Consulting logotyp">
+      </a>
+
+      <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="tjanster.html">Tjänster</a></li>
+        <li><a href="om-mig.html">Om mig</a></li>
+        <li><a href="referenser.html">Referenser</a></li>
+        <li><a href="kontakt.html" class="btn btn-primary nav-cta active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Start</a> / Kontakt</div>
+        <h1>Kontakta mig</h1>
+        <p>
+          Har du frågor eller vill diskutera ett projekt? Tveka inte att höra av dig –
+          jag återkommer så snart som möjligt.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Kontakt ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Kontaktuppgifter -->
+          <div class="contact-info">
+            <div class="info-item">
+              <div class="info-label">E</div>
+              <div>
+                <h3>E-post</h3>
+                <p><a href="mailto:consulting@spenner.com">consulting@spenner.com</a></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">T</div>
+              <div>
+                <h3>Telefon</h3>
+                <p><a href="tel:+46709105575">+46 709 10 55 75</a></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">A</div>
+              <div>
+                <h3>Adress</h3>
+                <p>Sånekullavägen 43<br>SE-217 74 Malmö</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kontaktformulär -->
+          <form class="form" id="contactForm" novalidate>
+            <h2>Skicka ett meddelande</h2>
+            <p>Fyll i formuläret så återkommer jag till dig. Fält markerade med <span style="color:#d9534f;">*</span> är obligatoriska.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Namn <span class="req">*</span></label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-post <span class="req">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Företag</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Ärende</label>
+              <select id="subject" name="subject">
+                <option value="">Välj ämne...</option>
+                <option value="projektledning">Projektledning</option>
+                <option value="managementkonsulting">Managementkonsulting</option>
+                <option value="affarsutveckling">Affärsutveckling</option>
+                <option value="ovrigt">Övrigt</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Meddelande <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Skicka meddelande</button>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Spenner Consulting</h4>
+          <p>
+            Genom projektledning och managementkonsulting omsätter jag mina kunders ambitioner
+            till mätbara resultat – med struktur, engagemang och långsiktigt ansvar.
+          </p>
+        </div>
+        <div>
+          <h4>Sidor</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="tjanster.html">Tjänster</a></li>
+            <li><a href="om-mig.html">Om mig</a></li>
+            <li><a href="referenser.html">Referenser</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:consulting@spenner.com">consulting@spenner.com</a></li>
+            <li><a href="tel:+46709105575">+46 709 10 55 75</a></li>
+            <li>Sånekullavägen 43, Malmö</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> Spenner Consulting. Alla rättigheter förbehållna.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=2"></script>
+</body>
+</html>
