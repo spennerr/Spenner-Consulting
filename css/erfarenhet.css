@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    Spenner Consulting - Erfarenhetssidan
    Gantt per organisation: varje rad är en organisation,
    med anställning, uppdrag och utbildning som staplar
@@ -13,7 +13,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px 20px;
-  background: rgba(255, 255, 255, 0.02);
+background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
   border-radius: var(--radius);
@@ -45,9 +45,9 @@
   border-radius: 5px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
-.sw-job     { background: linear-gradient(180deg, #2ebd6b, #239a56); }
-.sw-project { background: linear-gradient(180deg, #559fff, #3b7fe8); }
-.sw-edu     { background: linear-gradient(180deg, #eab308, #caa00a); }
+.sw-job     { background: linear-gradient(180deg, #738f52, #008e74); }
+.sw-project { background: linear-gradient(180deg, #8fd0f6, #58aef2); }
+.sw-edu     { background: linear-gradient(180deg, #14213d, #0f1b36); }
 
 /* ---------- Detaljmodal ---------- */
 .exp-modal {
@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(3, 8, 12, 0.72);
+  background: rgba(20, 33, 61, 0.45);
   backdrop-filter: blur(3px);
   animation: expFade 0.18s ease;
 }
@@ -71,10 +71,10 @@
   max-height: 82vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, var(--bg-elevated), #0f151d);
+  background: linear-gradient(180deg, var(--bg-elevated), #ffffff);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 30px 70px rgba(20, 33, 61, 0.45);
   animation: expPop 0.18s ease;
 }
 @keyframes expPop {
@@ -128,12 +128,12 @@
   border: 1px solid var(--border);
   border-left-width: 4px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-elevated);
   padding: 14px 16px;
 }
 .exp-rc-job     { border-left-color: var(--accent); }
-.exp-rc-project { border-left-color: #559fff; }
-.exp-rc-edu     { border-left-color: #eab308; }
+.exp-rc-project { border-left-color: #58aef2; }
+.exp-rc-edu     { border-left-color: #14213d; }
 
 .exp-rc-head {
   display: flex;
@@ -166,17 +166,17 @@
   border-radius: 999px;
   margin-top: 2px;
 }
-.exp-lg-tag.exp-tag-job     { background: rgba(46, 189, 107, 0.16); color: #5fd49a; border: 1px solid rgba(46, 189, 107, 0.45); }
-.exp-lg-tag.exp-tag-project { background: rgba(85, 159, 255, 0.16); color: #8cc0ff; border: 1px solid rgba(85, 159, 255, 0.45); }
-.exp-lg-tag.exp-tag-edu     { background: rgba(234, 179, 8, 0.16);  color: #f5cd64; border: 1px solid rgba(234, 179, 8, 0.45); }
+.exp-lg-tag.exp-tag-job     { background: rgba(115, 143, 82, 0.12); color: #00695a; border: 1px solid rgba(115, 143, 82, 0.4); }
+.exp-lg-tag.exp-tag-project { background: rgba(88, 174, 242, 0.16); color: #245e94; border: 1px solid rgba(88, 174, 242, 0.45); }
+.exp-lg-tag.exp-tag-edu     { background: rgba(20, 33, 61, 0.10); color: #14213d; border: 1px solid rgba(20, 33, 61, 0.28); }
 
 /* ---------- Gantt behållare ---------- */
 .gantt-wrap {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background:
-    radial-gradient(120% 90% at 0% 0%, rgba(46, 189, 107, 0.06), transparent 55%),
-    linear-gradient(180deg, var(--bg-elevated), #0e141c);
+    radial-gradient(120% 90% at 0% 0%, rgba(115, 143, 82, 0.06), transparent 55%),
+    linear-gradient(180deg, var(--bg-elevated), #ffffff);
   box-shadow: var(--shadow-md);
   overflow-x: auto;
   overflow-y: hidden;
@@ -192,7 +192,7 @@
 }
 .gantt-row:last-child { border-bottom: none; }
 .gantt-head {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-elevated);
   padding: 10px 18px;
 }
 
@@ -240,9 +240,9 @@
 .ex-sub { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
 
 /* Typmärken */
-.exp-tag-job     { background: rgba(46, 189, 107, 0.14); color: #5fd49a; border: 1px solid rgba(46, 189, 107, 0.4); }
-.exp-tag-project { background: rgba(85, 159, 255, 0.14); color: #8cc0ff; border: 1px solid rgba(85, 159, 255, 0.4); }
-.exp-tag-edu     { background: rgba(234, 179, 8, 0.14);  color: #f5cd64; border: 1px solid rgba(234, 179, 8, 0.4); }
+.exp-tag-job     { background: rgba(115, 143, 82, 0.12); color: #00695a; border: 1px solid rgba(115, 143, 82, 0.4); }
+.exp-tag-project { background: rgba(88, 174, 242, 0.16); color: #245e94; border: 1px solid rgba(88, 174, 242, 0.45); }
+.exp-tag-edu     { background: rgba(20, 33, 61, 0.10); color: #14213d; border: 1px solid rgba(20, 33, 61, 0.28); }
 
 /* Körfält & staplar */
 .lane {
@@ -259,7 +259,7 @@
   top: 50%;
   height: 2px;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(20, 33, 61, 0.08);
   border-radius: 2px;
 }
 
@@ -271,20 +271,20 @@
   min-width: 10px;
   border-radius: 9px;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(20, 33, 61, 0.22);
+  box-shadow: 0 1px 3px rgba(20, 33, 61, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 .lane-bar:hover {
-  filter: brightness(1.12) saturate(1.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  filter: brightness(1.03) saturate(1.05);
+  box-shadow: 0 4px 16px rgba(20, 33, 61, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transform: translateY(-50%) scaleY(1.08);
 }
 .lane-bar:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
 
-.bar-job     { background: linear-gradient(180deg, #34d17b, #22a056); }
-.bar-project { background: linear-gradient(180deg, #63a9ff, #3a78e6); }
-.bar-edu     { background: linear-gradient(180deg, #eec23c, #c99a08); }
+.bar-job     { background: linear-gradient(180deg, #17bf9e, #00997b); }
+.bar-project { background: linear-gradient(180deg, #8fd0f6, #58aef2); }
+.bar-edu     { background: linear-gradient(180deg, #23406e, #0f1b36); }
 
 .bar-dim { opacity: 0.18; }
 
@@ -295,9 +295,9 @@
   max-width: 260px;
   padding: 8px 10px;
   border-radius: var(--radius-sm);
-  background: #0c1219;
+  background: #ffffff;
   border: 1px solid var(--border-strong);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(20, 33, 61, 0.2);
   font-size: 0.82rem;
   line-height: 1.4;
   pointer-events: none;
@@ -313,7 +313,7 @@
 /* Rad-hover: signal att raden reagerar på klick */
 .gantt-row { transition: background-color 0.15s ease; }
 .gantt-row:hover {
-  background: rgba(46, 189, 107, 0.04);
+  background: rgba(115, 143, 82, 0.04);
 }
 .gantt-row:hover .ex-title { color: var(--accent); }
 
@@ -333,7 +333,7 @@
   gap: 12px;
 }
 .edu-open-list li {
-  background: linear-gradient(180deg, var(--bg-elevated), #10161f);
+  background: linear-gradient(180deg, var(--bg-elevated), #eef3f9);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 16px 18px;
@@ -366,3 +366,4 @@ body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .exp-modal, .exp-modal-card, .lane-bar { animation: none !important; transition: none !important; }
 }
+
