@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/custom.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
@@ -21,68 +21,91 @@
       --color-navy: #14213d;
       --color-slate: rgba(20, 33, 61, 0.75);
       --color-primary: #14213d;
-      --color-accenttext: #007d66;
       --color-teal: #8fd0f6;
       --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
       --font-display: "Playfair Display", Georgia, serif;
     }
-</style>
+    .dark {
+      --color-bg: #0a0f16;
+      --color-surface: #111a24;
+      --color-stone: rgba(143, 208, 246, 0.16);
+      --color-accent: #00ad8e;
+      --color-accentstrong: #8fd0f6;
+      --color-navy: #e6edf3;
+      --color-slate: rgba(230, 237, 243, 0.7);
+      --color-primary: #1d2b3f;
+      --color-teal: #8fd0f6;
+    }
+  </style>
 </head>
 <body class="bg-bg text-navy font-sans antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehÃ¥ll</a>
 
   <!-- ===== Header ===== -->
-  <header class="absolute inset-x-0 top-0 z-20 border-b border-white/15 bg-transparent backdrop-blur-sm">
+  <header class="sticky top-0 z-50 border-b border-navy/10 bg-bg/85 backdrop-blur">
     <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Huvudnavigering">
       <a href="index.html" class="flex items-center">
-        <img src="images/logo-white.png" alt="Spenner Consulting" class="h-12 w-auto object-contain">
+        <img src="images/logo.png" alt="Spenner Consulting" class="h-9 w-auto object-contain">
       </a>
 
       <!-- Desktop navigation -->
       <div class="hidden items-center gap-1 md:flex">
-        <a href="index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accent" data-i18n="nav.hem">Hem</a>
-        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accent" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accent" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="kontakt.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accent" data-i18n="nav.kontakt">Kontakt</a>
-        <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accent hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
-        <button type="button" class="ml-1 rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <a href="index.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accent" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accent" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accent" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accent" data-i18n="nav.kontakt">Kontakt</a>
+        <a href="kontakt.html#boka" class="ml-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accent hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="ml-1 rounded-full border border-navy/20 px-3 py-2 text-sm font-semibold text-navy hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <button type="button" class="ml-1 rounded-full border border-navy/20 p-2 text-navy hover:border-accent" data-theme-toggle aria-label="Växla mörkt läge">
+          <svg class="moon h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="sun hidden h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
       </div>
 
       <!-- Mobile controls -->
       <div class="flex items-center gap-1 md:hidden">
-        <a href="kontakt.html#boka" class="rounded-none bg-primary px-3 py-2 text-xs font-medium text-white" data-i18n="nav.boka">Boka Möte</a>
-        <button type="button" class="rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
-        <button type="button" data-nav-toggle class="p-2 text-white" aria-label="Öppna meny" aria-expanded="false">
+        <a href="kontakt.html#boka" class="rounded-full bg-primary px-3 py-2 text-xs font-medium text-white" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="rounded-full border border-navy/20 px-3 py-2 text-sm font-semibold" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <button type="button" class="rounded-full border border-navy/20 p-2" data-theme-toggle aria-label="Växla mörkt läge">
+          <svg class="moon h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="sun hidden h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button type="button" data-nav-toggle class="p-2" aria-label="Öppna meny" aria-expanded="false">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
 
     <!-- Mobile menu -->
-    <div class="hidden border-t border-navy/10 bg-surface md:hidden" data-nav-menu id="navMenu">
+    <div class="hidden border-t border-navy/10 md:hidden" data-nav-menu id="navMenu">
       <div class="flex flex-col gap-1 px-4 py-3">
-        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-navy hover:bg-stone/60" data-i18n="nav.hem">Hem</a>
-        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-navy hover:bg-stone/60" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-navy hover:bg-stone/60" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-navy hover:bg-stone/60" data-i18n="nav.kontakt">Kontakt</a>
+        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.kontakt">Kontakt</a>
       </div>
     </div>
   </header>
 
-  <main id="main">
+  <main>
     <!-- ===== Hero ===== -->
     <section class="relative overflow-hidden">
-      <img src="images/pexels-onthecrow-30912318.jpg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover">
-      <div class="absolute inset-0 bg-navy/50"></div>
-      <div class="relative mx-auto flex min-h-[680px] w-full max-w-3xl flex-col items-center justify-center px-4 py-32 text-center sm:px-6 md:min-h-[820px] md:py-44">
-        <h1 class="font-quattrocento text-5xl font-bold leading-none tracking-tight text-white sm:text-6xl">
-          SPEN<span class="text-accent">N</span>ER<br><span class="-mt-2 block font-normal text-accent text-2xl sm:text-3xl">CONSULTING</span>
+      <div class="pointer-events-none absolute inset-0 animate-drift opacity-[0.07]"
+           style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 40 40'%3E%3Cpath d='M10 30 L20 14 L30 30' fill='none' stroke='%2300ad8e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;)"></div>
+      <div class="relative mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 md:py-28">
+        <img src="images/logo.png" alt="Spenner Consulting" class="mx-auto w-auto max-w-[320px] max-h-32 object-contain">
+        </span>
+        <h1 class="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+          Glenn<br><span class="text-accent">SPENNER</span>
         </h1>
-        <p class="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-white/90" data-i18n="hero.lede">
+        <p class="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-slate" data-i18n="hero.lede">
           Projekt som levereras i tid, inom budget och med mätbart resultat – oavsett bransch.
         </p>
         <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <a href="kontakt.html#boka" class="inline-flex rounded-none bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-accent hover:text-navy"><h3 class="uppercase" data-i18n="nav.boka">Boka Möte</h3></a>
+          <a href="kontakt.html#boka" class="rounded-full bg-primary px-7 py-4 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="hero.cta">Boka ditt första möte med mig</a>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-2">
+          <span class="rounded-full border border-navy/15 bg-surface px-3 py-1.5 text-xs font-medium text-slate" data-i18n="hero.chipValues">Värderingsdrivet arbete</span>
+          <span class="rounded-full border border-navy/15 bg-surface px-3 py-1.5 text-xs font-medium text-slate" data-i18n="hero.chipResult">Mätbara resultat</span>
         </div>
       </div>
     </section>
@@ -91,7 +114,7 @@
     <section class="bg-surface py-16 sm:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="max-w-2xl">
-          <span class="text-xs font-semibold uppercase tracking-widest text-accenttext" data-i18n="value.eyebrow">Så arbetar jag</span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent" data-i18n="value.eyebrow">Så arbetar jag</span>
           <h2 class="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="value.title">Effektivt arbete, tydliga värderingar</h2>
           <p class="mt-4 text-lg leading-relaxed text-slate" data-i18n="value.lead">
             Jag kombinerar decennier som projektledare med en konsults öga – för att din organisation ska nå sina mål snabbare och säkrare.
@@ -99,17 +122,17 @@
         </div>
         <div class="mt-12 grid gap-6 sm:grid-cols-3">
           <div class="rounded-2xl border border-navy/10 bg-bg p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">01</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong dark:text-teal">01</span>
             <h3 class="mt-5 text-lg font-bold" data-i18n="value.v1t">Struktur</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="value.v1v">Tydlig styrning, planering och uppföljning i varje fas.</p>
           </div>
           <div class="rounded-2xl border border-navy/10 bg-bg p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">02</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong dark:text-teal">02</span>
             <h3 class="mt-5 text-lg font-bold" data-i18n="value.v2t">Engagemang</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="value.v2v">En partner som bryr sig om resultatet – inte bara om leveransen.</p>
           </div>
           <div class="rounded-2xl border border-navy/10 bg-bg p-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">03</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong dark:text-teal">03</span>
             <h3 class="mt-5 text-lg font-bold" data-i18n="value.v3t">Ansvar</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="value.v3v">Långsiktigt ansvar för att förändringen består efter avslutat uppdrag.</p>
           </div>
@@ -121,43 +144,43 @@
     <section class="py-16 sm:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="max-w-2xl">
-          <span class="text-xs font-semibold uppercase tracking-widest text-accenttext" data-i18n="srv.eyebrow">Tjänster</span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent" data-i18n="srv.eyebrow">Tjänster</span>
           <h2 class="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="srv.title">Främst projektledning – och stöd runtomkring</h2>
           <p class="mt-4 text-lg leading-relaxed text-slate" data-i18n="srv.lead">Företag anlitar mig när de behöver vägledning och extern hjälp med projekt, inom alla branscher.</p>
         </div>
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <article class="rounded-2xl border border-navy/10 bg-surface p-7 transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
-            <span class="text-3xl font-bold text-accenttext">01</span>
+            <span class="text-3xl font-bold text-accent">01</span>
             <h3 class="mt-4 text-lg font-bold" data-i18n="srv.s1t">Projektledning</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="srv.s1d">Allt från strategi till leverans – jag driver ditt projekt från start till mål med tydlig styrning.</p>
           </article>
           <article class="rounded-2xl border border-navy/10 bg-surface p-7 transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
-            <span class="text-3xl font-bold text-accenttext">02</span>
+            <span class="text-3xl font-bold text-accent">02</span>
             <h3 class="mt-4 text-lg font-bold" data-i18n="srv.s2t">Managementkonsulting</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="srv.s2d">Strategisk vägledning och rådgivning till ledningsgrupper i förändring och tillväxt.</p>
           </article>
           <article class="rounded-2xl border border-navy/10 bg-surface p-7 transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
-            <span class="text-3xl font-bold text-accenttext">03</span>
+            <span class="text-3xl font-bold text-accent">03</span>
             <h3 class="mt-4 text-lg font-bold" data-i18n="srv.s3t">Projekt- & portföljgranskning</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="srv.s3d">Oberoende bedömningar av investeringar och projekt, med beslutsstöd till ledningen.</p>
           </article>
           <article class="rounded-2xl border border-navy/10 bg-surface p-7 transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
-            <span class="text-3xl font-bold text-accenttext">04</span>
+            <span class="text-3xl font-bold text-accent">04</span>
             <h3 class="mt-4 text-lg font-bold" data-i18n="srv.s4t">Affärs- & verksamhetsutveckling</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="srv.s4d">Identifiering och genomförande av affärsmöjligheter för ökad kundnytta och konkurrenskraft.</p>
           </article>
           <article class="rounded-2xl border border-navy/10 bg-surface p-7 transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
-            <span class="text-3xl font-bold text-accenttext">05</span>
+            <span class="text-3xl font-bold text-accent">05</span>
             <h3 class="mt-4 text-lg font-bold" data-i18n="srv.s5t">IT-strategi & förändring</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate" data-i18n="srv.s5d">Strategisk rådgivning i IT-intensiva förändringsskeden, från vision till handlingsplan.</p>
           </article>
           <article class="flex flex-col items-start justify-between rounded-2xl bg-primary p-7 text-white">
             <h3 class="text-lg font-bold" data-i18n="abt.title">Decennier av projektledning</h3>
-            <a href="om-glenn.html" class="mt-4 inline-flex items-center rounded-none bg-white/10 px-4 py-2 text-sm font-medium hover:bg-accent hover:text-navy" data-i18n="abt.link">Se hela min tidslinje</a>
+            <a href="om-glenn.html" class="mt-4 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium hover:bg-accent hover:text-navy" data-i18n="abt.link">Se hela min tidslinje</a>
           </article>
         </div>
         <div class="mt-10 text-center">
-          <a href="kontakt.html#boka" class="inline-flex rounded-none bg-primary px-6 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="srv.cta">Boka ditt första möte med mig</a>
+          <a href="kontakt.html#boka" class="inline-flex rounded-full bg-primary px-6 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="srv.cta">Boka ditt första möte med mig</a>
         </div>
       </div>
     </section>
@@ -167,7 +190,7 @@
       <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="cta.title">Redo att diskutera ditt projekt?</h2>
         <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate" data-i18n="cta.sub">Boka ett kostnadsfritt första möte så lyssnar jag på din situation och föreslår nästa steg.</p>
-        <a href="kontakt.html#boka" class="mt-8 inline-flex rounded-none bg-primary px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="cta.btn">Boka ditt första möte med mig</a>
+        <a href="kontakt.html#boka" class="mt-8 inline-flex rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="cta.btn">Boka ditt första möte med mig</a>
       </div>
     </section>
   </main>
@@ -176,23 +199,23 @@
   <footer class="border-t border-navy/10 bg-surface">
     <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
       <div>
-        <p class="text-lg font-bold tracking-tight">Spenner<span class="text-accenttext"> Consulting</span></p>
+        <p class="text-lg font-bold tracking-tight">Spenner<span class="text-accent"> Consulting</span></p>
         <p class="mt-3 text-sm leading-relaxed text-slate" data-i18n="ft.tagline">Projektledning som levererar effektiva, värderingsdrivna och mätbara resultat.</p>
       </div>
       <div>
         <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.nav">Navigation</h4>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="index.html" class="text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a></li>
-          <li><a href="tjanster.html" class="text-navy hover:text-accenttext" data-i18n="nav.tjanster">Tjänster</a></li>
-          <li><a href="om-glenn.html" class="text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a></li>
-          <li><a href="kontakt.html" class="text-navy hover:text-accenttext" data-i18n="nav.kontakt">Kontakt</a></li>
+          <li><a href="index.html" class="text-navy hover:text-accent" data-i18n="nav.hem">Hem</a></li>
+          <li><a href="tjanster.html" class="text-navy hover:text-accent" data-i18n="nav.tjanster">Tjänster</a></li>
+          <li><a href="om-glenn.html" class="text-navy hover:text-accent" data-i18n="nav.omGlenn">Om Glenn</a></li>
+          <li><a href="kontakt.html" class="text-navy hover:text-accent" data-i18n="nav.kontakt">Kontakt</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.contact">Kontakt</h4>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="mailto:consulting@spenner.com" class="text-navy hover:text-accenttext">consulting@spenner.com</a></li>
-          <li><a href="tel:+46709105575" class="text-navy hover:text-accenttext">+46 709 10 55 75</a></li>
+          <li><a href="mailto:consulting@spenner.com" class="text-navy hover:text-accent">consulting@spenner.com</a></li>
+          <li><a href="tel:+46709105575" class="text-navy hover:text-accent">+46 709 10 55 75</a></li>
           <li class="text-slate" data-i18n="ct.addressV">Sånekullavägen 43, SE-217 74 Malmö</li>
         </ul>
       </div>
