@@ -1,191 +1,178 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tjänster - Spenner Consulting</title>
-  <meta name="description" content="Projektledning, managementkonsulting och affärsutveckling hos Spenner Consulting.">
+  <title>Tjänster – Spenner Consulting</title>
+  <meta name="description" content="Spenner Consulting erbjuder projektledning, managementkonsulting, portföljgranskning, affärsutveckling och IT-strategi.">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #ffffff;
+      --color-surface: #ffffff;
+      --color-stone: #8fd0f6;
+      --color-accent: #00ad8e;
+      --color-accentstrong: #14213d;
+      --color-navy: #14213d;
+      --color-slate: rgba(20, 33, 61, 0.75);
+      --color-primary: #14213d;
+      --color-accenttext: #007d66;
+      --color-teal: #8fd0f6;
+      --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      --font-display: "Playfair Display", Georgia, serif;
+    }
+</style>
 </head>
-<body>
+<body class="bg-bg text-navy font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehÃ¥ll</a>
 
-  <!-- ===== Header & Navigation ===== -->
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Huvudnavigering">
-      <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Start</a></li>
-        <li><a href="tjanster.html" class="active" aria-current="page">Tjänster</a></li>
-        <li><a href="om-mig.html">Om mig</a></li>
-        <li><a href="erfarenhet.html">Erfarenhet</a></li>
-        <li><a href="kontakt.html" class="btn btn-primary nav-cta">Kontakt</a></li>
-      </ul>
+  <!-- ===== Header ===== -->
+  <header class="sticky top-0 z-50 border-b border-navy/10 bg-bg/85 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Huvudnavigering">
+      <a href="index.html" class="flex items-center">
+        <img src="images/logo.png" alt="Spenner Consulting" class="h-12 w-auto object-contain">
+      </a>
+      <div class="hidden items-center gap-1 md:flex">
+        <a href="index.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-accenttext" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.kontakt">Kontakt</a>
+        <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accent hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="ml-1 rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold text-navy hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+      </div>
+      <div class="flex items-center gap-1 md:hidden">
+        <a href="kontakt.html#boka" class="rounded-none bg-primary px-3 py-2 text-xs font-medium text-white" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <button type="button" data-nav-toggle class="p-2" aria-label="Öppna meny" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </nav>
+    <div class="hidden border-t border-navy/10 md:hidden" data-nav-menu id="navMenu">
+      <div class="flex flex-col gap-1 px-4 py-3">
+        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.kontakt">Kontakt</a>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== Page hero ===== -->
-    <section class="page-hero theme-tjanster">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Start</a> / Tjänster</div>
-        <h1>Mina tjänster</h1>
-        <p>
-          Jag kombinerar strategisk skärpa med praktiskt genomförande för att leverera
-          mätbara resultat – snabbare, säkrare och med bestående effekt.
-        </p>
-      </div>
-
-      <span class="glow glow-a"></span>
-      <span class="glow glow-b"></span>
-
-      <div class="hero-waves" aria-hidden="true">
-        <svg class="wave wave-1" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,64 C240,110 480,16 720,48 C960,80 1200,32 1440,64 L1440,120 L0,120 Z"/>
-        </svg>
-        <svg class="wave wave-2" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,72 C300,20 600,100 900,56 C1150,20 1300,80 1440,48 L1440,120 L0,120 Z"/>
-        </svg>
-        <svg class="wave wave-3" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,84 C260,40 520,100 780,64 C1040,28 1240,92 1440,56 L1440,120 L0,120 Z"/>
-        </svg>
+    <section class="border-b border-navy/10 bg-surface">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accenttext" data-i18n="srv.eyebrow">Tjänster</span>
+        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl" data-i18n="svc.title">Tjänster</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-slate" data-i18n="svc.subtitle">Vägledning och extern hjälp med projekt – inom alla branscher.</p>
       </div>
     </section>
 
-    <!-- ===== Tjänstekort ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="grid grid-3">
-          <article class="card">
-            <span class="card-num">01</span>
-            <h3>Projektledning</h3>
-            <p>
-              Professionell ledning av komplexa projekt – från initiering och planering till
-              genomförande och avslut. Jag säkerställer tydlig styrning, effektiv resursanvändning
-              och uppnådda mål inom tid och budget.
-            </p>
+    <!-- ===== Service cards ===== -->
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-navy/10 bg-surface p-8">
+            <span class="text-4xl font-bold text-accenttext">01</span>
+            <h2 class="mt-4 text-2xl font-bold" data-i18n="svc.c1t">Projektledning</h2>
+            <p class="mt-3 leading-relaxed text-slate" data-i18n="svc.c1d">Jag driver projekt från start till mål: tydlig styrning, planering, uppföljning och leverans i tid och inom budget.</p>
+            <ul class="mt-5 space-y-2 text-sm text-navy">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c1b1">Planering & styrning</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c1b2">Budget- & tidsansvar</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c1b3">Kommunikation & stakeholders</span></li>
+            </ul>
           </article>
-          <article class="card">
-            <span class="card-num">02</span>
-            <h3>Management support</h3>
-            <p>
-              Nära stöd till ledningsgrupper och verksamhetsansvariga i strategiska frågor,
-              beslutsunderlag och förändringsarbete. Ett objektivt bollplank med lång erfarenhet.
-            </p>
+          <article class="rounded-2xl border border-navy/10 bg-surface p-8">
+            <span class="text-4xl font-bold text-accenttext">02</span>
+            <h2 class="mt-4 text-2xl font-bold" data-i18n="svc.c2t">Managementkonsulting</h2>
+            <p class="mt-3 leading-relaxed text-slate" data-i18n="svc.c2d">Strategisk vägledning för ledningsgrupper – omsätter ambition till struktur och handling.</p>
+            <ul class="mt-5 space-y-2 text-sm text-navy">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c2b1">Strategi till handling</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c2b2">Beslutsstöd</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c2b3">Organisationsutveckling</span></li>
+            </ul>
           </article>
-          <article class="card">
-            <span class="card-num">03</span>
-            <h3>Affärsutveckling</h3>
-            <p>
-              Analys, positionering och genomförande av affärsutveckling. Jag bidrar med nya
-              infallsvinklar och kreativitet för att skapa kundnytta och konkurrenskraft.
-            </p>
+          <article class="rounded-2xl border border-navy/10 bg-surface p-8">
+            <span class="text-4xl font-bold text-accenttext">03</span>
+            <h2 class="mt-4 text-2xl font-bold" data-i18n="svc.c3t">Projekt- & portföljgranskning</h2>
+            <p class="mt-3 leading-relaxed text-slate" data-i18n="svc.c3d">Oberoende granskning av investeringar, portföljer och projekt – med skarpt beslutsstöd till ledningen.</p>
+            <ul class="mt-5 space-y-2 text-sm text-navy">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c3b1">Investment Appraisal</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c3b2">Risk- & kvalitetsgranskning</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c3b3">Oberoende till ledningen</span></li>
+            </ul>
           </article>
-          <article class="card">
-            <span class="card-num">04</span>
-            <h3>Process- & verksamhetsutveckling</h3>
-            <p>
-              Verksamhetsförändringar genom strukturerat processarbete. Från nulägesanalys till
-              implementering av hållbara, effektiva arbetssätt.
-            </p>
-          </article>
-          <article class="card">
-            <span class="card-num">05</span>
-            <h3>IT-strategi & IT-plan</h3>
-            <p>
-              Strategisk rådgivning och planering i IT-intensiva förändringsskeden. Analyser av
-              företagets IT-status och omvärldsbevakning med IT-utvecklingens konsekvenser i fokus.
-            </p>
-          </article>
-          <article class="card">
-            <span class="card-num">06</span>
-            <h3>Kreativ partner & idéutveckling</h3>
-            <p>
-              En kreativ partner för innovativa affärsidéer och koncept. Jag hjälper dig se
-              verksamheten både från utsidan och insidan för att skapa de rätta förändringarna.
-            </p>
+          <article class="rounded-2xl border border-navy/10 bg-surface p-8">
+            <span class="text-4xl font-bold text-accenttext">04</span>
+            <h2 class="mt-4 text-2xl font-bold" data-i18n="svc.c4t">Affärs- & verksamhetsutveckling</h2>
+            <p class="mt-3 leading-relaxed text-slate" data-i18n="svc.c4d">Jag identifierar och genomför affärs- och verksamhetsmöjligheter som stärker kundnytta och konkurrenskraft.</p>
+            <ul class="mt-5 space-y-2 text-sm text-navy">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c4b1">Affärsmöjligheter</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c4b2">Processarbete</span></li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c4b3">Innovation & koncept</span></li>
+            </ul>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== Konsultinriktning ===== -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Konsultinriktning</span>
-          <h2>Mitt arbetssätt</h2>
-        </div>
-        <div class="grid grid-3">
-          <article class="card">
-            <span class="card-num">Steg 1</span>
-            <h3>Analys</h3>
-            <p>Jag betraktar verksamheten både från utsidan och insidan för att förstå nuläget, möjligheter och utmaningar.</p>
-          </article>
-          <article class="card">
-            <span class="card-num">Steg 2</span>
-            <h3>Positionering</h3>
-            <p>Tillsammans identifierar jag rätt strategi, riktning och prioriteringar för att nå dina mål.</p>
-          </article>
-          <article class="card">
-            <span class="card-num">Steg 3</span>
-            <h3>Genomförande</h3>
-            <p>Jag leder och stödjer genomförandet hela vägen – med struktur, engagemang och ansvar för resultatet.</p>
-          </article>
-        </div>
+        <article class="mt-6 rounded-2xl bg-primary p-8 text-white">
+          <span class="text-4xl font-bold text-accenttext">05</span>
+          <h2 class="mt-4 text-2xl font-bold" data-i18n="svc.c5t">IT-strategi & förändring</h2>
+          <p class="mt-3 max-w-2xl leading-relaxed text-white/80" data-i18n="svc.c5d">Strategisk rådgivning i IT-intensiva förändringsskeden – från vision och IT-plan till genomförande.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c5b1">IT-strategi & IT-plan</span></li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c5b2">Teknik- & verksamhetsförankring</span></li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="svc.c5b3">Förändringsledning</span></li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="section">
-      <div class="container" style="text-align:center;">
-        <div class="section-head">
-          <span class="eyebrow">Intresserad?</span>
-          <h2>Vill du prata om ditt behov?</h2>
-          <p>Varje uppdrag är unikt. Kontakta mig så diskuterar jag hur jag bäst kan hjälpa dig.</p>
-        </div>
-        <a href="kontakt.html" class="btn btn-primary btn-large">Kontakta mig</a>
+    <section class="bg-surface py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="svc.ctaTitle">Vilket projekt har du på gång?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate" data-i18n="svc.ctaSub">Berätta om din situation – så föreslår jag hur jag kan hjälpa.</p>
+        <a href="kontakt.html#boka" class="mt-8 inline-flex rounded-none bg-primary px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="svc.ctaBtn">Boka ditt första möte med mig</a>
       </div>
     </section>
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Spenner Consulting</h4>
-          <p>
-            Genom projektledning och managementkonsulting omsätter jag mina kunders ambitioner
-            till mätbara resultat – med struktur, engagemang och långsiktigt ansvar.
-          </p>
-        </div>
-        <div>
-          <h4>Sidor</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Start</a></li>
-            <li><a href="tjanster.html">Tjänster</a></li>
-            <li><a href="om-mig.html">Om mig</a></li>
-            <li><a href="erfarenhet.html">Erfarenhet</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:consulting@spenner.com">consulting@spenner.com</a></li>
-            <li><a href="tel:+46709105575">+46 709 10 55 75</a></li>
-            <li>Sånekullavägen 43, Malmö</li>
-          </ul>
-        </div>
+  <footer class="border-t border-navy/10 bg-surface">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div>
+        <p class="text-lg font-bold tracking-tight">Spenner<span class="text-accenttext"> Consulting</span></p>
+        <p class="mt-3 text-sm leading-relaxed text-slate" data-i18n="ft.tagline">Projektledning som levererar effektiva, värderingsdrivna och mätbara resultat.</p>
       </div>
-      <div class="footer-bottom">&copy; <span id="year">2026</span> Spenner Consulting. Alla rättigheter förbehållna.</div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.nav">Navigation</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="index.html" class="text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a></li>
+          <li><a href="tjanster.html" class="text-navy hover:text-accenttext" data-i18n="nav.tjanster">Tjänster</a></li>
+          <li><a href="om-glenn.html" class="text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a></li>
+          <li><a href="kontakt.html" class="text-navy hover:text-accenttext" data-i18n="nav.kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.contact">Kontakt</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mailto:consulting@spenner.com" class="text-navy hover:text-accenttext">consulting@spenner.com</a></li>
+          <li><a href="tel:+46709105575" class="text-navy hover:text-accenttext">+46 709 10 55 75</a></li>
+          <li class="text-slate" data-i18n="ct.addressV">Sånekullavägen 43, SE-217 74 Malmö</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-navy/10">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-slate sm:flex-row sm:px-6">
+        <span>&copy; <span data-year>2026</span> <span data-i18n="ft.copyright">Spenner Consulting. Alla rättigheter förbehållna.</span></span>
+      </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

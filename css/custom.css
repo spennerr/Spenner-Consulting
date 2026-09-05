@@ -1,0 +1,38 @@
+/* ============================================================
+   Spenner Consulting – animations & extra utilities
+   Tailwind v4 (loadCSS in-browser) generates the utility classes.
+   ============================================================ */
+
+@keyframes floatGlenn {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.animate-float-glenn { animation: floatGlenn 6s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
+
+.font-display { letter-spacing: -0.02em; }
+
+/* Headings in Playfair Display, body in Inter (--font-sans) */
+h1, h2, h3 { font-family: var(--font-display); }
+
+/* Hero brand heading */
+.font-quattrocento { font-family: "Quattrocento Sans", "Helvetica Neue", Arial, sans-serif; }
+
+/* Header navigation links: Playfair Display, uppercase */
+header a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Subtle focus ring that respects the element's own text colour */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-float-glenn { animation: none; }
+}

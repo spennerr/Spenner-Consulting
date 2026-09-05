@@ -1,171 +1,214 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt - Spenner Consulting</title>
-  <meta name="description" content="Kontakta Spenner Consulting för projektledning och managementkonsulting. Jag svarar gärna på dina frågor.">
+  <title>Kontakt & Boka Möte – Spenner Consulting</title>
+  <meta name="description" content="Boka ditt första möte med Glenn Spenner. Kontakta Spenner Consulting för projektledning och managementkonsulting.">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #ffffff;
+      --color-surface: #ffffff;
+      --color-stone: #8fd0f6;
+      --color-accent: #00ad8e;
+      --color-accentstrong: #14213d;
+      --color-navy: #14213d;
+      --color-slate: rgba(20, 33, 61, 0.75);
+      --color-primary: #14213d;
+      --color-accenttext: #007d66;
+      --color-teal: #8fd0f6;
+      --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      --font-display: "Playfair Display", Georgia, serif;
+    }
+</style>
 </head>
-<body>
+<body class="bg-bg text-navy font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehÃ¥ll</a>
 
-  <!-- ===== Header & Navigation ===== -->
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Huvudnavigering">
-      <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Start</a></li>
-        <li><a href="tjanster.html">Tjänster</a></li>
-        <li><a href="om-mig.html">Om mig</a></li>
-        <li><a href="erfarenhet.html">Erfarenhet</a></li>
-        <li><a href="kontakt.html" class="btn btn-primary nav-cta active">Kontakt</a></li>
-      </ul>
+  <!-- ===== Header ===== -->
+  <header class="sticky top-0 z-50 border-b border-navy/10 bg-bg/85 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Huvudnavigering">
+      <a href="index.html" class="flex items-center">
+        <img src="images/logo.png" alt="Spenner Consulting" class="h-12 w-auto object-contain">
+      </a>
+      <div class="hidden items-center gap-1 md:flex">
+        <a href="index.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="px-3 py-2 text-sm font-medium text-accenttext" data-i18n="nav.kontakt">Kontakt</a>
+        <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accent hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="ml-1 rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold text-navy hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+      </div>
+      <div class="flex items-center gap-1 md:hidden">
+        <a href="kontakt.html#boka" class="rounded-none bg-primary px-3 py-2 text-xs font-medium text-white" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <button type="button" data-nav-toggle class="p-2" aria-label="Öppna meny" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </nav>
+    <div class="hidden border-t border-navy/10 md:hidden" data-nav-menu id="navMenu">
+      <div class="flex flex-col gap-1 px-4 py-3">
+        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium hover:bg-stone/60" data-i18n="nav.kontakt">Kontakt</a>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== Page hero ===== -->
-    <section class="page-hero theme-kontakt">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Start</a> / Kontakt</div>
-        <h1>Kontakta mig</h1>
-        <p>
-          Har du frågor eller vill diskutera ett projekt? Tveka inte att höra av dig –
-          jag återkommer så snart som möjligt.
-        </p>
-      </div>
-
-      <span class="glow glow-a"></span>
-      <span class="glow glow-b"></span>
-
-      <div class="hero-waves" aria-hidden="true">
-        <svg class="wave wave-1" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,64 C240,110 480,16 720,48 C960,80 1200,32 1440,64 L1440,120 L0,120 Z"/>
-        </svg>
-        <svg class="wave wave-2" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,72 C300,20 600,100 900,56 C1150,20 1300,80 1440,48 L1440,120 L0,120 Z"/>
-        </svg>
-        <svg class="wave wave-3" viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,84 C260,40 520,100 780,64 C1040,28 1240,92 1440,56 L1440,120 L0,120 Z"/>
-        </svg>
+    <section class="border-b border-navy/10 bg-surface">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accenttext" data-i18n="ct.eyebrow">Kontakt</span>
+        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl" data-i18n="ct.title">Kontakt & Boka Möte</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-slate" data-i18n="ct.subtitle">Redo för ditt första möte? Kontakta mig direkt eller fyll i formuläret.</p>
       </div>
     </section>
 
-    <!-- ===== Kontakt ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="contact-grid">
+    <!-- ===== Booking / contact ===== -->
+    <section id="boka" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2">
+        <!-- Contact details -->
+        <div>
+          <h2 class="font-display text-3xl font-bold tracking-tight" data-i18n="ct.forTitle">Boka ditt första möte</h2>
+          <p class="mt-3 leading-relaxed text-slate" data-i18n="ct.forLead">Jag återkommer inom en vardag med förslag på tid.</p>
+          <div class="mt-8 space-y-4">
+            <a href="tel:+46709105575" class="flex items-center gap-4 rounded-2xl border border-navy/10 bg-surface p-5 transition hover:border-accent/60">
+              <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-semibold uppercase tracking-wide text-slate" data-i18n="ct.phone">Ring direkt</span>
+                <span class="mt-1 block text-lg font-bold">+46 709 10 55 75</span>
+              </span>
+            </a>
+            <a href="mailto:consulting@spenner.com" class="flex items-center gap-4 rounded-2xl border border-navy/10 bg-surface p-5 transition hover:border-accent/60">
+              <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-semibold uppercase tracking-wide text-slate" data-i18n="ct.email">Mejla</span>
+                <span class="mt-1 block text-lg font-bold">consulting@spenner.com</span>
+              </span>
+            </a>
+            <div class="flex items-center gap-4 rounded-2xl border border-navy/10 bg-surface p-5">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-semibold uppercase tracking-wide text-slate" data-i18n="ct.address">Kontor</span>
+                <span class="mt-1 block font-bold" data-i18n="ct.addressV">Sånekullavägen 43, SE-217 74 Malmö</span>
+              </span>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl border border-navy/10 bg-surface p-5">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/20 text-accentstrong">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 2"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-semibold uppercase tracking-wide text-slate" data-i18n="ct.hours">Svarstid</span>
+                <span class="mt-1 block font-bold" data-i18n="ct.hoursV">Inom en vardag</span>
+              </span>
+            </div>
+          </div>
+        </div>
 
-          <!-- Kontaktuppgifter -->
-          <div class="contact-info">
-            <div class="info-item">
-              <div class="info-label">E</div>
-              <div>
-                <h3>E-post</h3>
-                <p><a href="mailto:consulting@spenner.com">consulting@spenner.com</a></p>
-              </div>
+        <!-- Form -->
+        <form id="contactForm" novalidate class="rounded-3xl border border-navy/10 bg-surface p-7 sm:p-9 shadow-xl">
+          <h2 class="font-display text-2xl font-bold tracking-tight" data-i18n="ct.forTitle">Boka ditt första möte</h2>
+          <p class="mt-2 text-sm text-slate" data-i18n="ct.forLead">Jag återkommer inom en vardag med förslag på tid.</p>
+
+          <div class="mt-7 grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="name" class="mb-1.5 block text-sm font-semibold" data-i18n="ct.name">Namn</label>
+              <input id="name" name="name" type="text" autocomplete="name" required
+                     class="w-full rounded-xl border border-navy/15 bg-bg px-4 py-3 text-sm outline-none transition focus:border-accenttext focus:ring-2 focus:ring-accenttext">
             </div>
-            <div class="info-item">
-              <div class="info-label">T</div>
-              <div>
-                <h3>Telefon</h3>
-                <p><a href="tel:+46709105575">+46 709 10 55 75</a></p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">A</div>
-              <div>
-                <h3>Adress</h3>
-                <p>Sånekullavägen 43<br>SE-217 74 Malmö</p>
-              </div>
+            <div>
+              <label for="email" class="mb-1.5 block text-sm font-semibold" data-i18n="ct.emailF">E-post</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                     class="w-full rounded-xl border border-navy/15 bg-bg px-4 py-3 text-sm outline-none transition focus:border-accenttext focus:ring-2 focus:ring-accenttext">
             </div>
           </div>
 
-          <!-- Kontaktformulär -->
-          <form class="form" id="contactForm" novalidate>
-            <h2>Skicka ett meddelande</h2>
-            <p>Fyll i formuläret så återkommer jag till dig. Fält markerade med <span style="color:#d9534f;">*</span> är obligatoriska.</p>
+          <div class="mt-5">
+            <label for="company" class="mb-1.5 block text-sm font-semibold" data-i18n="ct.company">Företag</label>
+            <input id="company" name="company" type="text" autocomplete="organization"
+                   class="w-full rounded-xl border border-navy/15 bg-bg px-4 py-3 text-sm outline-none transition focus:border-accenttext focus:ring-2 focus:ring-accenttext">
+          </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Namn <span class="req">*</span></label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">E-post <span class="req">*</span></label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
-              </div>
-            </div>
+          <div class="mt-5">
+            <label for="subject" class="mb-1.5 block text-sm font-semibold" data-i18n="ct.subject">Ärende</label>
+            <select id="subject" name="subject"
+                    class="w-full rounded-xl border border-navy/15 bg-bg px-4 py-3 text-sm outline-none transition focus:border-accenttext focus:ring-2 focus:ring-accenttext">
+              <option value="" data-i18n="ct.subjectPh">Vad rör mötet?</option>
+              <option value="projektledning" data-i18n="ct.subject1">Projektledning</option>
+              <option value="management" data-i18n="ct.subject2">Managementkonsulting</option>
+              <option value="review" data-i18n="ct.subject3">Portfölj- & projektgranskning</option>
+              <option value="affarsutveckling" data-i18n="ct.subject4">Affärs- & verksamhetsutveckling</option>
+              <option value="it-strategi" data-i18n="ct.subject5">IT-strategi & förändring</option>
+              <option value="ovrigt" data-i18n="ct.subject6">Övrigt</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="company">Företag</label>
-              <input type="text" id="company" name="company" autocomplete="organization">
-            </div>
+          <div class="mt-5">
+            <label for="message" class="mb-1.5 block text-sm font-semibold" data-i18n="ct.message">Meddelande</label>
+            <textarea id="message" name="message" rows="5" required
+                      placeholder="Berätta kort om din situation och vad du vill uppnå."
+                      data-placeholder-i18n="ct.messagePh"
+                      class="w-full rounded-xl border border-navy/15 bg-bg px-4 py-3 text-sm outline-none transition focus:border-accenttext focus:ring-2 focus:ring-accenttext placeholder:text-slate"></textarea>
+          </div>
 
-            <div class="form-group">
-              <label for="subject">Ärende</label>
-              <select id="subject" name="subject">
-                <option value="">Välj ämne...</option>
-                <option value="projektledning">Projektledning</option>
-                <option value="managementkonsulting">Managementkonsulting</option>
-                <option value="affarsutveckling">Affärsutveckling</option>
-                <option value="ovrigt">Övrigt</option>
-              </select>
-            </div>
+          <button type="submit"
+                  class="mt-6 w-full rounded-none bg-primary px-6 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy"
+                  data-i18n="ct.send">Skicka bokningsförfrågan</button>
 
-            <div class="form-group">
-              <label for="message">Meddelande <span class="req">*</span></label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Skicka meddelande</button>
-
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-
-        </div>
+          <p class="mt-3 text-xs text-slate" data-i18n="ct.req">Obligatoriska fält.</p>
+          <div id="formStatus" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </section>
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Spenner Consulting</h4>
-          <p>
-            Genom projektledning och managementkonsulting omsätter jag mina kunders ambitioner
-            till mätbara resultat – med struktur, engagemang och långsiktigt ansvar.
-          </p>
-        </div>
-        <div>
-          <h4>Sidor</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Start</a></li>
-            <li><a href="tjanster.html">Tjänster</a></li>
-            <li><a href="om-mig.html">Om mig</a></li>
-            <li><a href="erfarenhet.html">Erfarenhet</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:consulting@spenner.com">consulting@spenner.com</a></li>
-            <li><a href="tel:+46709105575">+46 709 10 55 75</a></li>
-            <li>Sånekullavägen 43, Malmö</li>
-          </ul>
-        </div>
+  <footer class="border-t border-navy/10 bg-surface">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div>
+        <p class="text-lg font-bold tracking-tight">Spenner<span class="text-accenttext"> Consulting</span></p>
+        <p class="mt-3 text-sm leading-relaxed text-slate" data-i18n="ft.tagline">Projektledning som levererar effektiva, värderingsdrivna och mätbara resultat.</p>
       </div>
-      <div class="footer-bottom">&copy; <span id="year">2026</span> Spenner Consulting. Alla rättigheter förbehållna.</div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.nav">Navigation</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="index.html" class="text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a></li>
+          <li><a href="tjanster.html" class="text-navy hover:text-accenttext" data-i18n="nav.tjanster">Tjänster</a></li>
+          <li><a href="om-glenn.html" class="text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a></li>
+          <li><a href="kontakt.html" class="text-navy hover:text-accenttext" data-i18n="nav.kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate" data-i18n="ft.contact">Kontakt</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="mailto:consulting@spenner.com" class="text-navy hover:text-accenttext">consulting@spenner.com</a></li>
+          <li><a href="tel:+46709105575" class="text-navy hover:text-accenttext">+46 709 10 55 75</a></li>
+          <li class="text-slate" data-i18n="ct.addressV">Sånekullavägen 43, SE-217 74 Malmö</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-navy/10">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-slate sm:flex-row sm:px-6">
+        <span>&copy; <span data-year>2026</span> <span data-i18n="ft.copyright">Spenner Consulting. Alla rättigheter förbehållna.</span></span>
+      </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>
