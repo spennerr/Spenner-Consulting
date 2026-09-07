@@ -20,6 +20,7 @@
 
     // Hero
     "hero.lede":      { sv: "Projekt som levereras i tid, inom budget och med mätbart resultat – oavsett bransch.", en: "Projects delivered on time, on budget and with measurable results – across every sector." },
+    "hero.tjanster":  { sv: "Mina tjänster", en: "My Services" },
 
     // Value proposition
     "value.eyebrow":  { sv: "Så arbetar jag", en: "How I work" },

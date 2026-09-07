@@ -13,16 +13,17 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
-      --color-bg: #ffffff;
-      --color-surface: #ffffff;
-      --color-stone: #8fd0f6;
-      --color-accent: #00ad8e;
-      --color-accentstrong: #14213d;
-      --color-navy: #14213d;
-      --color-slate: rgba(20, 33, 61, 0.75);
-      --color-primary: #14213d;
-      --color-accenttext: #007d66;
-      --color-teal: #8fd0f6;
+      --color-bg: #f4f1ee;
+      --color-surface: #d9d3cb;
+      --color-stone: #d9d3cb;
+      --color-accent: #273f3e;
+      --color-accentlight: #ad9984;
+      --color-accentstrong: #1b242a;
+      --color-navy: #1b242a;
+      --color-slate: #394b56;
+      --color-primary: #1b242a;
+      --color-accenttext: #273f3e;
+      --color-teal: #ad9984;
       --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
       --font-display: "Playfair Display", Georgia, serif;
     }
@@ -33,16 +34,14 @@
 
   <!-- ===== Header ===== -->
   <header class="sticky top-0 z-50 border-b border-navy/10 bg-bg/85 backdrop-blur">
-    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Huvudnavigering">
-      <a href="index.html" class="flex items-center">
-        <img src="images/logo.png" alt="Spenner Consulting" class="h-12 w-auto object-contain">
-      </a>
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-end px-4 sm:px-6 md:justify-center" aria-label="Huvudnavigering">
+
       <div class="hidden items-center gap-1 md:flex">
         <a href="index.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a>
         <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-accenttext" data-i18n="nav.tjanster">Tjänster</a>
         <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a>
         <a href="kontakt.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.kontakt">Kontakt</a>
-        <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accent hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+        <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
         <button type="button" class="ml-1 rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold text-navy hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
       </div>
       <div class="flex items-center gap-1 md:hidden">
@@ -136,7 +135,7 @@
       <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="svc.ctaTitle">Vilket projekt har du på gång?</h2>
         <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate" data-i18n="svc.ctaSub">Berätta om din situation – så föreslår jag hur jag kan hjälpa.</p>
-        <a href="kontakt.html#boka" class="mt-8 inline-flex rounded-none bg-primary px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent hover:text-navy" data-i18n="svc.ctaBtn">Boka ditt första möte med mig</a>
+        <a href="kontakt.html#boka" class="mt-8 inline-flex rounded-none bg-primary px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accentlight hover:text-navy" data-i18n="svc.ctaBtn">Boka ditt första möte med mig</a>
       </div>
     </section>
   </main>

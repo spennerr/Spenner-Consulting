@@ -11,6 +11,25 @@
 
 html { scroll-behavior: smooth; }
 
+/* Full-page background image – only applied on the home page (body.page-home) */
+body.page-home {
+  background-image: url("../images/pexels-onthecrow-30912318.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay so text stays readable over the full-page background */
+body.page-home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 36, 42, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .font-display { letter-spacing: -0.02em; }
 
 /* Headings in Playfair Display, body in Inter (--font-sans) */
