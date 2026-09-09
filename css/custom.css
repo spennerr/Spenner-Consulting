@@ -32,6 +32,15 @@ body.page-home::before {
 
 .font-display { letter-spacing: -0.02em; }
 
+/* Gantt chart: vertical gridlines every 5 years (1980–2027 = 47 years, 5/47 ≈ 10.638%) */
+.gantt-track {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(27, 36, 42, 0.08) 0px, rgba(27, 36, 42, 0.08) 1px,
+    transparent 1px, transparent 10.638%
+  );
+}
+
 /* Headings in Playfair Display, body in Inter (--font-sans) */
 h1, h2, h3 { font-family: var(--font-display); }
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Om Glenn – Spenner Consulting</title>
-  <meta name="description" content="Lär känna Glenn Spenner – senior projektledare och managementkonsult med över 30 års erfarenhet inom IT, energi och telekom.">
+  <title>Erfarenheter – Spenner Consulting</title>
+  <meta name="description" content="Glenn Spenners yrkesbana som ett Gantt-schema – anställningar, uppdrag och utbildningar från 1982 till idag.">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,16 @@
       --color-accentstrong: #1b242a;
       --color-navy: #1b242a;
       --color-slate: #394b56;
+      --color-gantt-anst: #1b242a;
+      --color-gantt-uppd: #273f3e;
+      --color-gantt-edu: #ad9984;
       --color-primary: #1b242a;
       --color-accenttext: #273f3e;
       --color-teal: #ad9984;
       --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
       --font-display: "Playfair Display", Georgia, serif;
     }
-</style>
+  </style>
 </head>
 <body class="bg-bg text-navy font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehåll</a>
@@ -43,8 +46,8 @@
       <div class="hidden items-center gap-1 md:flex">
         <a href="index.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.hem">Hem</a>
         <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="erfarenheter.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.erfarenheter">Erfarenheter</a>
+        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-navy hover:text-accenttext" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="erfarenheter.html" class="px-3 py-2 text-sm font-medium text-accenttext" data-i18n="nav.erfarenheter">Erfarenheter</a>
         <a href="kontakt.html#boka" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
         <button type="button" class="ml-1 rounded-none border border-navy/20 px-3 py-2 text-sm font-semibold text-navy hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
       </div>
@@ -70,27 +73,66 @@
     <!-- ===== Page hero ===== -->
     <section class="border-b border-navy/10 bg-surface">
       <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
-        <span class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accenttext"><span class="h-2 w-2 rounded-full bg-accent"></span><span data-i18n="abt2.eyebrow">Om mig</span></span>
-        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl" data-i18n="abt2.title">Lär känna mig</h1>
+        <img src="images/spenner-logo.svg" alt="Spenner Consulting" class="h-10 w-auto sm:h-12">
+        <span class="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accenttext"><span class="h-2 w-2 rounded-full bg-accent"></span><span data-i18n="exp.eyebrow">Erfarenheter</span></span>
+        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl" data-i18n="exp.title">Erfarenheter</h1>
+
+        <!-- Filter buttons -->
+        <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filtrera Gantt-schemat">
+          <button type="button" data-gantt-filter="all" aria-pressed="true" class="rounded-none border bg-primary px-4 py-2 text-sm font-medium text-white transition" data-i18n="exp.filterAll">Alla</button>
+          <button type="button" data-gantt-filter="anst" aria-pressed="false" class="rounded-none border border-navy/20 bg-bg px-4 py-2 text-sm font-medium text-navy transition hover:border-accent" data-i18n="exp.filterAnst">Anställningar</button>
+          <button type="button" data-gantt-filter="uppd" aria-pressed="false" class="rounded-none border border-navy/20 bg-bg px-4 py-2 text-sm font-medium text-navy transition hover:border-accent" data-i18n="exp.filterUppd">Uppdrag</button>
+          <button type="button" data-gantt-filter="edu" aria-pressed="false" class="rounded-none border border-navy/20 bg-bg px-4 py-2 text-sm font-medium text-navy transition hover:border-accent" data-i18n="exp.filterEdu">Utbildningar</button>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Bio + actions ===== -->
+    <!-- ===== Gantt ===== -->
     <section class="py-16 sm:py-20">
-      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
-        <div>
-          <p class="text-lg leading-relaxed text-slate" data-i18n="abt2.lead">Jag är en senior projektledare och managementkonsult med över 30 års erfarenhet av att driva projekt och förändringsarbete inom IT, energi och telekom. Min styrka är att omsätta strategier till konkreta resultat – genom tydlig styrning, nära samarbete och ett pragmatiskt arbetssätt. Oavsett om det handlar om stora portföljer, komplexa projekt eller strategisk rådgivning, strävar jag efter mätbara framsteg i varje fas. Nyfiken på hur jag kan bidra till just din organisation? Då ser jag fram emot att höra av dig.</p>
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a href="kontakt.html" class="inline-flex rounded-none bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-accentlight hover:text-navy" data-i18n="abt2.btnContact">Kontakta mig</a>
-            <a href="Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Swe.docx.pdf" target="_blank" rel="noopener" data-cv-link data-i18n="abt2.btnCv" class="inline-flex rounded-none border border-navy/20 px-5 py-2.5 text-sm font-medium text-navy transition hover:border-accent hover:bg-accentlight hover:text-navy">CV</a>
-          </div>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <span class="mb-4 block h-1 w-14 rounded-full bg-accent"></span>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl" data-i18n="exp.ganttTitle">Min yrkesbana, i ett Gantt-schema</h2>
+
+        <!-- Legend -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold">
+          <span class="inline-flex items-center gap-2"><span class="h-3 w-6 rounded-sm bg-gantt-anst"></span> <span data-i18n="exp.legendAnst">Anställning</span></span>
+          <span class="inline-flex items-center gap-2"><span class="h-3 w-6 rounded-sm bg-gantt-uppd"></span> <span data-i18n="exp.legendUppd">Uppdrag</span></span>
+          <span class="inline-flex items-center gap-2"><span class="h-3 w-6 rounded-sm bg-gantt-edu"></span> <span data-i18n="exp.legendEdu">Utbildning & kompetens</span></span>
         </div>
-        <div class="mx-auto w-full max-w-sm">
-          <img src="images/glenn-spenner.jpg" alt="Porträtt av Glenn Spenner" class="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl ring-4 ring-accent/30">
+
+        <div class="mt-8 overflow-x-auto pb-4">
+          <div class="min-w-[1320px]">
+            <!-- Year axis -->
+            <div class="flex gap-6">
+              <div class="w-64 shrink-0 text-xs font-semibold uppercase tracking-wider text-slate" data-i18n="exp.axisYear">År</div>
+              <div class="relative h-9 flex-1 text-[11px] font-semibold uppercase tracking-wider text-slate" id="ganttAxis"></div>
+            </div>
+
+            <!-- Rows are rendered by js/main.js into #ganttRows -->
+            <div id="ganttRows"></div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ===== Gantt detail modal ===== -->
+  <div id="ganttModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="ganttModalTitle">
+    <div data-gantt-close class="absolute inset-0 bg-navy/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl border border-navy/10 bg-bg shadow-2xl">
+      <div class="flex items-start justify-between gap-4 border-b border-navy/10 p-6 sm:p-8">
+        <div>
+          <p id="ganttModalMeta" class="text-xs font-semibold uppercase tracking-widest text-accenttext"></p>
+          <h2 id="ganttModalTitle" class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl"></h2>
+          <p id="ganttModalPlace" class="mt-1 text-sm text-slate"></p>
+        </div>
+        <button type="button" data-gantt-close aria-label="Stäng" class="shrink-0 rounded-none border border-navy/20 bg-bg p-2 text-navy transition hover:border-accent hover:bg-primary hover:text-white">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="ganttModalBody" class="p-6 sm:p-8"></div>
+    </div>
+  </div>
 
   <!-- ===== Footer ===== -->
   <footer class="border-t border-navy/10 bg-primary">
