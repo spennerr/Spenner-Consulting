@@ -22,8 +22,8 @@
       --color-navy: #1b242a;
       --color-slate: #394b56;
       --color-gantt-anst: #1b242a;
-      --color-gantt-uppd: #273f3e;
-      --color-gantt-edu: #ad9984;
+      --color-gantt-uppd: #b0715c;
+      --color-gantt-edu: #c28d4b;
       --color-primary: #1b242a;
       --color-accenttext: #273f3e;
       --color-ochre: #c28d4b;
@@ -79,6 +79,10 @@
       <div class="mx-auto w-full max-w-4xl px-4 py-20 text-center sm:px-6">
         <h1 class="font-display text-5xl font-bold tracking-tight text-white sm:text-6xl" data-i18n="exp.title">Erfarenheter</h1>
         <span class="mx-auto mt-6 block h-1 w-16 rounded-full bg-accentlight"></span>
+        <p id="expTitle" class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70" data-i18n="exp.ganttTitle"></p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Swe.pdf" target="_blank" rel="noopener" data-cv-link data-i18n="abt2.btnCv" class="inline-flex rounded-none border border-white/50 px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy">CV</a>
+        </div>
       </div>
     </section>
 
@@ -86,18 +90,16 @@
     <section class="py-16 sm:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="rounded-3xl border border-navy/10 bg-bg/95 p-8 shadow-xl backdrop-blur sm:p-10">
-        <span class="mb-4 block h-1 w-14 rounded-full bg-accent"></span>
-        <h2 id="expTitle" class="font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl" data-i18n="exp.ganttTitle">Min yrkesbana, i ett Gantt-schema</h2>
-
         
-        <div class="mt-10 flex flex-wrap items-center gap-2" role="group" aria-label="Filtrera">
+        
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-2" role="group" aria-label="Filtrera">
           <button type="button" data-gantt-filter="all" aria-pressed="true" class="inline-flex items-center gap-2 rounded-full border border-accentlight bg-accentlight px-4 py-2 text-sm font-semibold text-navy transition" data-i18n="exp.filterAll">Alla</button>
           <button type="button" data-gantt-filter="anst" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-anst"></span> <span data-i18n="exp.filterAnst">Anställningar</span></button>
           <button type="button" data-gantt-filter="uppd" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-uppd"></span> <span data-i18n="exp.filterUppd">Uppdrag</span></button>
           <button type="button" data-gantt-filter="edu" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-edu"></span> <span data-i18n="exp.filterEdu">Utbildningar</span></button>
         </div>
 
-        <div class="mt-5 flex flex-wrap items-center gap-2" role="group" aria-label="Välj visning">
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-2" role="group" aria-label="Välj visning">
           <button type="button" data-view-toggle="gantt" aria-pressed="true" class="rounded-none border-2 border-accentlight bg-accentlight px-6 py-3 text-base font-semibold text-navy transition hover:-translate-y-0.5" data-i18n="exp.viewGantt">Tidslinje</button>
           <button type="button" data-view-toggle="list" aria-pressed="false" class="rounded-none border-2 border-navy/25 bg-white px-6 py-3 text-base font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy" data-i18n="exp.viewList">Lista</button>
         </div>

@@ -442,9 +442,8 @@
       if (!container) return;
       var html = "";
       ganttRowsData.forEach(function (r) {
-        var showMain = currentGanttFilter === "all" || r.type === currentGanttFilter;
+        if (currentGanttFilter !== "all" && r.type !== currentGanttFilter) return;
         var subs = (r.sub || []).filter(function (s) { return currentGanttFilter === "all" || s.type === currentGanttFilter; });
-        if (!showMain && subs.length === 0) return;
         var type = ganttType[r.type];
         var display = ganttSel(r.display, lang);
         var period = ganttPeriod(r, lang);
