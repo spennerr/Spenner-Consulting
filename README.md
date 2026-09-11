@@ -46,8 +46,9 @@ No `package.json`, no bundler, no npm install. The site works by opening the HTM
 
 ### Experience timeline (Gantt)
 - Renders the full career history as an **interactive Gantt-style timeline** (1986-2026) with employer rows, education and assignment sub-bars.
-- **Filter buttons** (All / Employment / Education / Assignments) rerender the chart on the fly.
-- Every row opens a **detail modal** with role, place, period and description.
+- A **view toggle** next to the filters switches between the timeline and a **list view** that shows each experience with its full, in-depth description.
+- **Filter buttons** (All / Employment / Education / Assignments) rerender the active view on the fly.
+- Every row opens a **detail modal** with role, place, period and the full description.
 - Fully controlled from the keyboard: **Enter** opens, **Escape** closes, focus returns to the trigger.
 - Decorative bars are non-interactive; the accessible control is the "Read more" button.
 

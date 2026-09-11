@@ -77,6 +77,9 @@
     "exp.filterUppd": { sv: "Uppdrag", en: "Assignments" },
     "exp.filterEdu":  { sv: "Utbildningar", en: "Education" },
     "exp.ganttTitle": { sv: "Min yrkesbana, i ett Gantt-schema", en: "My career, in a Gantt chart" },
+    "exp.listTitle":  { sv: "Min yrkesbana, samlad som lista", en: "My career, as a list" },
+    "exp.viewGantt":  { sv: "Tidslinje", en: "Timeline" },
+    "exp.viewList":   { sv: "Lista", en: "List" },
     "exp.legendAnst": { sv: "Anställning", en: "Employment" },
     "exp.legendUppd": { sv: "Uppdrag", en: "Assignment" },
     "exp.legendEdu":  { sv: "Utbildning & kompetens", en: "Education & skills" },
@@ -170,7 +173,7 @@
         b.setAttribute("aria-label", t("i18n.toggle", lang));
       });
       if (persist) localStorage.setItem("sc-lang", lang);
-      if (typeof renderGantt === "function") renderGantt(lang);
+      if (typeof renderView === "function") renderView(lang);
     }
     var langBtn = document.querySelector("[data-lang-toggle]");
     if (langBtn) {
@@ -237,6 +240,40 @@
       { from: 1982, to: 1988, type: "edu", display: { sv: "Lunds Universitet", en: "Lund University" }, place: { sv: "Lund", en: "Lund" }, desc: { sv: "Master i företagsekonomi och datavetenskap, med inriktning på strategi och konsultmetodik.", en: "Master of Economics & Computer Science, focus on strategy and consulting methodology." } }
     ];
 
+    var ganttLongDesc = [
+      { display: "SPENNER Consulting", from: 2026.583333, descL: { sv: "Som konsult tillhandahålla tjänster för kunder med fokus på Management konsult, Projektledning, Processutveckling.", en: "As a consultant, provide services to clients with a focus on management consulting, project management, process development." } },
+      { display: "Ørsted", from: 2012, descL: { sv: "Ansvar för investeringsbedömningar (Investment Appraisals) och beslutsstöd till ledningen. Samtliga vindkraftsinstallationsinvesteringar (offshore) granskades av avdelningen. Sammanställde en rapport till ledningen med markering och status av investeringen, så som risker, leveranstid, säkerhet m.m. Till en början var jag ansvarig för att göra projektgranskning av samtliga installationsprojekt med ett team av interna specialister där vi kontrollerade att projekten uppfyllde de krav och kriterier för att få passera en beslutspunkt och fortsätta i nästa fas av projektet. Projektmodellen baseras på Project Management Institute (PMI) och jag deltog med att anpassa verksamhetens modell samt undervisa i vissa delar. Utförde även processförbättringsarbete och samarbeten med de olika avdelningarna utifrån ekonomiavdelningen.", en: "Responsible for investment appraisals and decision support for the Executive team. All wind power installation (offshore) investments were reviewed by the department. Compiled a report to the Executive team noting the status of the investment, such as risks, delivery time, safety, etc. Initially, I was responsible for conducting project reviews of all installation projects together with a team of internal specialists, where we verified that the projects met the requirements and criteria needed to pass a decision gate and proceed to the next phase of the project. The project model is based on the Project Management Institute (PMI), and I took part in adapting the organization's model as well as teaching certain parts of it. Also carried out process improvement work and collaborations with the various departments from the finance department's perspective." } },
+      { display: "Sony Mobile (SonyEricsson)", from: 2006, descL: { sv: "Som en start Planerare för eftermarknad, sedan Chef för Kundtjänstplanering, till Consumer Portfolio Manager – roller som kretsade kring projektledning, planering och en bättre kundupplevelse efter försäljning. Ledde strategin för kundtjänstportföljen, med integrering av självbetjäningslösningar och efterförsäljningsplanering. Koordinerade global kundtjänstverksamhet, vilket förbättrade effektivitet och kundnöjdhet. Ledde tvärfunktionella team som levererade innovativa supportlösningar för konsumenter. Därefter Business Relationship Manager (BRM) med fullt ansvar för budgeten inom IT-avdelningen samt ansvar för Inköp, Kundtjänst och Logistik.", en: "As a start After Sales Planner, then Head of Customer Service Planning, to Consumer Portfolio Manager – roles that revolved around project management, planning, and a better customer experience after sales. Led customer service portfolio strategy, integrating self-service solutions and after-sales planning. Coordinated global customer service operations, enhancing efficiency and customer satisfaction. Managed cross-functional teams delivering innovative consumer support solutions. Subsequently Business Relationship Manager (BRM) with full responsibility for the budget within the IT department and responsibility for Purchasing, Customer Service, and Logistics." } },
+      { display: "Teleca Software Solutions AB", from: 2004, descL: { sv: "Ledde mjukvaruutvecklingsprojekt med internationella team och levererade till kunder inom mobiltelefonindustrin. Lösningarna baserades på en bas av utvecklade moduler som Teleca ägde och anpassades och integrerades i mobiltelefonerna till olika kunder.", en: "Led software development projects with international teams and delivered to customers in the mobile phone industry. The solutions were based on a foundation of developed modules owned by Teleca, which were adapted and integrated into the mobile phones for various customers." } },
+      { display: "Home Entertainment", from: 2003, descL: { sv: "Huvudprojektledare för framtagningen av systemspecifikation för införandet av nytt affärssystem. Detta som objektiv konsult mellan kunden och dess systemleverantör. Home Entertainment erbjuder cd och andra varor inom musik och film utifrån en prenumeration.", en: "Head project manager for the development of the system specification for the implementation of a new business system. This as an objective consultant between the customer and its system supplier. Home Entertainment offers CDs and other goods within music and film based on a subscription." } },
+      { display: "SPENNER Consulting", from: 2002, descL: { sv: "Som konsultföretagare tillhandahålla tjänster för kunder med fokus på Management konsult, Projektledning, Processutveckling.", en: "As a consultant, provide services to clients with a focus on management consulting, project management, process development." } },
+      { display: "Deva Consulting Group", from: 2002, descL: { sv: "Som underkonsult till dem har jag arbetat fram en metod som vi kallar för Diagnos. Metoden innebär att vi erbjuder kunder ett kort och intensivt intervjupaket (upp till 10 intervjupersoner inom eller utanför företaget) som leder till att ge svar på ett antal förslag som kan lösa situationen som kunden befinner sig i.", en: "As a subcontractor to them, I have developed a method we call Diagnosis. The method means that we offer clients a short and intensive package of interviews (up to 10 interviewees within or outside the company), which leads to providing answers in the form of a number of proposals that can resolve the situation the client finds themselves in." } },
+      { display: "QuickWise", from: 2002, descL: { sv: "Projektledare för införande av ny infrastruktur, e-posthantering samt CRM för bättre samverkan mellan QuickWise kontor i Malmö, Stockholm, London och Nottingham.", en: "Project manager for the implementation of new infrastructure, email management, and CRM for better collaboration between QuickWise offices in Malmö, Stockholm, London, and Nottingham." } },
+      { display: "ASPERITY", from: 2001.666667, descL: { sv: "Hjälpte Öresundskraft att skapa en IT-strategi för deras koncern. Därefter påbörjades de aktiviteter som behöver utföras för att deras IT-vision, som vi tog fram under hösten 2001, ska uppnås. Målet var att skapa ett medvetande runt IS/IT samt att få koncernen att använda IS/IT för att skapa kundnytta och ge bättre service för sina kunder och leverantörer samt övriga intressenter. Arbetet utfördes med hjälp av enkäter och intervjuer samt tillsammans med en arbetsgrupp som är tillsatt av delar av Öresundskrafts ledning samt processägare.", en: "Helped Öresundskraft create an IT strategy for their group. Following that, the activities that need to be performed for their IT vision, which we developed during the autumn of 2001, are being initiated. The goal was to create awareness around IS/IT and to get the group to use IS/IT to create customer value and provide better service for their customers and suppliers as well as other stakeholders. The work is carried out with the help of surveys and interviews as well as together with a working group appointed by parts of Öresundskraft's management and process owners." } },
+      { display: "Öresundskraft", from: 2001.25, descL: { sv: "Etablera affärsmöjligheter för ett stadsnät, Metropolitan Area Network (MAN), i Helsingborg. Öresundskraft investerar i att bygga ett fiberoptiskt nät och behövde hjälp med projektledning samt att skapa affärsmöjligheter med sitt nät. Mycket inspirerande och utmanande projekt med helt nya förutsättningar på marknaden. Min uppgift var att stödja ledningen samt att skapa relationer med leverantörer, fastighetsägare samt slutkunder.", en: "Establish business opportunities for a Metropolitan Area Network (MAN) in Helsingborg. Öresundskraft is investing in building a fibre-optic network and needed help with project management as well as creating business opportunities with its network. A very inspiring and challenging project with entirely new market conditions. My task was to support management as well as to build relationships with suppliers, property owners, and end customers." } },
+      { display: "Ericsson Mobile", from: 2000.25, descL: { sv: "Förstudie för Ericssons nästa generation av webblösningar. Projektet innebar att titta på de nya möjligheterna att skapa en ny infrastruktur, med möjlighet att expandera deras sajt på ett mer flexibelt sätt. Arbetet bestod av nära samarbete med övriga internetsatsningar inom Ericsson-koncernen som helhet. Projektet bestod av 10-15 personer.", en: "Project manager for a feasibility study for the next generation of internet solutions supporting employees, partners and customers. The project goal was to centralize all web applications and use SAP as a data store for all applications, as well as to implement a single sign-on system." } },
+      { display: "IconMedialab AB", from: 2000, descL: { sv: "Managementkonsult med inriktning mot kunder vars mål varit att öka kundnyttan med hjälp av internet som en ny kanal mot marknaden. Affärs- och projektledning inom privata och offentliga verksamheter, t.ex. affärs- och projektledning för Öresundskraft.", en: "Management consultant focused on clients whose goal has been to increase customer value by means of the internet as a new channel to the market. Business and project management for private and public sector organizations, e.g. business and project management for Öresundskraft." } },
+      { display: "AssiDomän, Förenade Well", from: 1999, descL: { sv: "Projektchef för implementering av ett nytt egenutvecklat och processorienterat affärssystem. Produkten bestod av ett antal standardsystem samt det egenutvecklade som skulle integreras för att utnyttja företagets processer till fullo. Projektet bestod av ca 20-25 personer i sex delprojekt: utveckling, drift, implementering, integration, konvertering och dokumentation, samt lika många från beställarsidan.", en: "Project manager for implementing a new in-house developed and process-oriented ERP system for the core business. The project involved nearly 50 project members within a period of 2 years. The system's objective was to support and optimize the business processes. The project was divided into seven subprojects – change management, development, migration, integration, documentation, implementation and maintenance." } },
+      { display: "SAS", from: 1998.166667, descL: { sv: "Projektgranskning av AMS (Airport management system). Ett kort uppdrag för att hjälpa kunden med att få ett objektivt underlag för val av lösning/system innan val av inköp.", en: "Project review of AMS (Airport management system). A short assignment to help the client obtain an objective basis for choosing a solution/system before making a purchasing decision." } },
+      { display: "Swebank", from: 1997, descL: { sv: "Startade med att arbeta fram en offert samt prototyp för ett nytt webbaserat kundstödssystem för bankkontoren i deras nya plattform GP2000. Under sommaren och hösten startade jag upp ett projekt för deras backoffice-funktioner för samma plattform. Målet var att införa ett nytt client/server-system. I oktober 1997 gick jag över som projektchef för deras intranätlösning vid namnet Kanal1. De huvudsakliga funktionerna var e-post, forum (diskussionsgrupper), ärendehantering samt sök- och dokumenthantering. Även den externa informationswebben ingick i affärsområdet. Projektet befann sig i ett skede för produktionssättning samt att förbereda version 2 av Kanal1. Det fanns under denna period ett enormt tryck på utveckling inom webbområdet, för att kunna sprida information i de båda fusionerande bankerna.", en: "Started by developing a quote and prototype for a new web-based customer support system for the bank branches in their new platform GP2000. During the summer and autumn, I started up a project for their back-office functions for the same platform. The goal was to introduce a new client/server system. In October 1997, I moved over as project manager for their intranet solution named Kanal1. The main functions were e-mail, forums (discussion groups), case management, and search/document management. The external information website was also included in the business area. The project was at a stage of going into production as well as preparing version 2 of Kanal1. During this period, there was enormous pressure on development within the web area, in order to be able to spread information in the two merging banks." } },
+      { display: "SAS", from: 1997, descL: { sv: "Projektledare för lanseringen av en ny produkt/tjänst/koncept till de mest lojala kunderna och frequent flyers. Samordnade marknadsföringsprocesser, både externa och interna, och fick allt på plats före lanseringen samt samordnade med allianspartner-flygbolagen. Utbildade stewarder och markpersonal på samtliga flygplatser. Planerade och genomförde programtjänsterna för en ny nivå av Eurobonus-kort för frequent flyer- och lojala kundgruppen, både SAS- och Diners-kort (co-branded).", en: "Project manager for the launch of a new product/service/concept to the most loyal customers and frequent flyers. Coordinated marketing processes, both external and internal, and got everything in place before the launch, as well as coordinating with alliance partner airlines. Trained cabin crew and ground staff at all airports. Planned and implemented the program services for a new tier of Eurobonus card for the frequent flyer and loyal customer group, both SAS and Diners cards (co-branded)." } },
+      { display: "Ericsson Network Business (EBC)", from: 1996, descL: { sv: "Inhyrd som projektchef för ett projekt som innebar ett nytt sätt att göra radioplanering. EBC utvecklar en mjukvara vid namnet RAPS (Radio Planning System) som är verktyget för denna typ av planering. Projektet handlade om ny hantering av nät för att hantera DECT inom städer och framförallt inom tätbebyggda områden, dvs all överföring sker med radioöverföring istället för med nedgrävda fasta förbindelser. Pilotkunden, ett stort telefonbolag i England, implementerade detta under 1997.", en: "Project management for development of RAPS (Radio Planning System). New handling of wireless network (DECT) within urbanized areas. Pilot customer was a big telecom company in the UK." } },
+      { display: "TietoEnator AB", from: 1995, descL: { sv: "Projektledning och verksamhetsutveckling som huvudinriktning med ett antal storföretag inom näringslivet på meritlistan, Föreningssparbanken, Ericsson, Tele2, SAS m.fl. Varit ansvarig för partnerskap med SAP och byggt upp enheten inom TietoEnator. Ansvarade för TietoEnators satsning på SAP i Sverige, först i Stockholm och sedan i Malmö. Koordinering samt kontakter med kunder och partners för att skapa affärsmöjligheter. Ansvaret för satsningen innebar till en början att bli en partner till SAP, vilket vi blev i september 1998.", en: "Project management and business development as the main focus, with a number of major corporations from the business sector on the track record, Föreningssparbanken, Ericsson, Tele2, SAS, among others. Was responsible for the partnership with SAP and built up the unit within TietoEnator. Was responsible for TietoEnator's initiative in SAP in Sweden, first in Stockholm and then in Malmö. Coordination as well as contacts with customers and partners to create business opportunities. The responsibility for the initiative initially meant becoming a partner to SAP, which we became in September 1998." } },
+      { display: "Tele2", from: 1995, descL: { sv: "Inhyrd som produktkoordinator av CallingCard (kopplad telefontjänst till kreditkort). Uppdraget innebar att vidareutveckla faktureringssystemet och koordinera verksamheten runt produkten samt berörd personal. Avveckling av olönsamma kort tillsammans med säljaren, efter att ha gjort en grundläggande intäkt/kostnadsanalys, lönsamhetsanalys samt sammanställning av statistik, för att kunna ge ett förslag till fortsatt strategi.", en: "Hired as a product coordinator of CallingCard (a telephone service linked to credit cards). The assignment involved further developing the invoicing system and coordinating operations around the product as well as the staff involved. Discontinuation of unprofitable cards together with the salesperson, after we had conducted a basic income/cost analysis and compiled statistics, in order to be able to present a proposal for a continued strategy." } },
+      { display: "Lever AB", from: 1992, descL: { sv: "Huvudarbetsuppgiften att få ett fungerande OA som en förberedelse för implementering av flera specifika Lever Europe-system, videokonferens, Notes samt rapporteringssystem. Projektledning med analys och planering för implementering av SAP R3, där Lever Nordic (Sverige, Danmark, Finland) var först av 17 länder. Sex månader i Port Sunlight/Leeds, Storbritannien, i standardiseringsprojektarbete av SAP inom Lever Europe tillsammans med personal från Holland och Storbritannien.", en: "The main task was to get a functioning OA (Office Automation) up and running as preparation for the implementation of several specific Lever Europe systems, video conferencing, Notes, and reporting systems. Project management with analysis and planning for the implementation of SAP R3, where Lever Nordic (Sweden, Denmark, Finland) was the first of 17 countries. 6 months in Port Sunlight/Leeds, UK, in standardization project work on SAP within Lever Europe together with staff from Holland and the UK." } },
+      { display: "TeleLarm AB", from: 1989, descL: { sv: "Uppdrag att vidareutveckla system, planering av testunderlag, då främst de ekonomiska modulerna (redovisning, reskontror, projektredovisning och MA-rutiner) samt att bygga upp en fungerande drift- och utbildningsorganisation. Maskinparken bestod av 21 IBM RT-maskiner placerade över hela landet och kommunicerade via Televerkets X25-nät DataPak, varav 2 st. i Stockholm på HK där alla fakturor, reskontrakonteringar samt lagerbeställningar replikerades.", en: "Assignment to further develop the system and to plan test documentation, primarily for the financial modules (accounting, accounts receivable/payable, project accounting, and MA routines), as well as to build up a functioning operations and training organization. The equipment fleet consisted of 21 IBM RT machines deployed across the entire country, communicating via Televerket's X.25 network DataPak, of which 2 were located in Stockholm at HQ, where all invoices, ledger postings, and stock orders were replicated." } },
+      { display: "Commentor AB", from: 1988, descL: { sv: "Anställdes till en början som kundutbildare av det administrativa modulsystemet. Avancerade dock snabbt till en position som projektledare hos företagets största kund, med uppdrag att vidareutveckla system, planera testunderlag, då främst de ekonomiska modulerna (redovisning, reskontror, projektredovisning och MA-rutiner) samt att bygga upp en fungerande drift- och utbildningsorganisation.", en: "Was initially hired as a customer trainer for the administrative module system. However, quickly advanced to a position as project manager at the company's largest client, with the task of further developing systems and planning test documentation, primarily for the financial modules (accounting, subsidiary ledgers, project accounting and MA routines), as well as building up a functioning operations and training organization." } },
+      { display: "Sandvik Information AB", from: 1986, descL: { sv: "Utlandspraktik i Singapore under 2 månader där arbetsuppgifterna bestod av att dokumentera de regionala (sydostasiatiska) förändringarna i det globala interna administrativa systemet. Utvecklade ett system för användarna att ställa frågor, en databas med Q&A skapades. Detta för att IT-chefen slutade och därmed säkra en överlämning till lokala personalen.", en: "International internship in Singapore for 2 months, where the tasks consisted of documenting the regional (Southeast Asian) changes in the global internal administrative system. Development of a system for users to ask their questions; a database of Q&A was created. This was due to the IT manager leaving, and thus ensuring a secure handover to the local staff." } },
+      { display: "Perstorp Administration AB", from: 1985, descL: { sv: "Projektanställning (studieuppehåll i sju månader) som till en början innebar en konvertering från IBMs DOS/VSE till MVS/XA vid IBM Malmö Converting Center (MCC). Hjälpte också till med att implementera det nykonverterade systemet i Perstorp samt genomförandet av de uppställda testmomenten.", en: "Project employment (a seven-month break from studies) which initially involved a conversion from IBM DOS/VSE to MVS/XA at IBM Malmö Converting Centre (MCC). Also helped implement the newly converted system in Perstorp, as well as carrying out the scheduled test procedures." } },
+      { display: "Lunds Universitet", from: 1982, descL: { sv: "Fick skapa en egen linje som inkluderade ADB 60 poäng samt företagsekonomi 60 poäng, med fördjupning i strategi och styrsystem samt konsultmetodik. Kompletterade även med 10 poäng matematik.", en: "Had to create my own program of study that included ADB (Automatic Data Processing) 60 credits as well as Business Administration 60 credits, with a specialization in strategy and management control systems as well as consulting methodology. Also supplemented this with 10 credits of mathematics." } }
+    ];
+    ganttLongDesc.forEach(function (p) {
+      ganttRowsData.forEach(function (r) {
+        if (r.display && r.display.sv === p.display && Math.round(r.from * 1000) === Math.round(p.from * 1000)) {
+          r.descL = p.descL;
+        }
+      });
+    });
     var eduCount = {};
     ganttRowsData.forEach(function (r) {
       if (r.type === "edu") {
@@ -259,7 +296,7 @@
       var from = ganttYearLabel(r.from);
       if (r.to === null) return from + ", " + t("exp.today", lang);
       if (Math.round(r.from) === Math.round(r.to)) return from;
-      return from + ", " + ganttYearLabel(r.to);
+      return from + " – " + ganttYearLabel(r.to);
     }
 
     var ganttType = {
@@ -280,6 +317,7 @@
     }
 
     var currentGanttFilter = "all";
+    var currentView = "gantt";
 
     function renderGantt(lang) {
       var container = document.getElementById("ganttRows");
@@ -398,6 +436,53 @@
       container.innerHTML = html;
     }
 
+    function renderList(lang) {
+      var container = document.getElementById("ganttList");
+      if (!container) return;
+      var html = "";
+      ganttRowsData.forEach(function (r) {
+        var showMain = currentGanttFilter === "all" || r.type === currentGanttFilter;
+        var subs = (r.sub || []).filter(function (s) { return currentGanttFilter === "all" || s.type === currentGanttFilter; });
+        if (!showMain && subs.length === 0) return;
+        var type = ganttType[r.type];
+        var display = ganttSel(r.display, lang);
+        var period = ganttPeriod(r, lang);
+        html += '<article class="border-b border-navy/10 py-7 last:border-b-0">';
+        html += '<div class="flex flex-wrap items-center gap-2">';
+        html += '<span class="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1 text-xs font-semibold shadow-sm"><span class="h-2.5 w-2.5 rounded-[3px] ' + type.dot + '"></span>' + ganttEsc(t(type.badge, lang)) + '</span>';
+        html += '<span class="text-xs font-semibold text-accenttext">' + ganttEsc(period) + '</span>';
+        html += '</div>';
+        html += '<h3 class="mt-3 font-display text-2xl font-bold tracking-tight text-navy">' + ganttEsc(display) + '</h3>';
+        if (r.role) html += '<p class="mt-1 text-sm font-semibold text-navy">' + ganttEsc(ganttSel(r.role, lang)) + '</p>';
+        if (r.place) html += '<p class="mt-0.5 text-xs text-slate">' + ganttEsc(ganttSel(r.place, lang)) + '</p>';
+        if (r.desc) html += '<p class="mt-3 text-sm leading-relaxed text-slate">' + ganttEsc(ganttSel(r.desc, lang)) + '</p>';
+        if (r.descL) html += '<p class="mt-2 text-sm leading-relaxed text-navy/90">' + ganttEsc(ganttSel(r.descL, lang)) + '</p>';
+        if (subs.length) {
+          html += '<div class="mt-3 space-y-1.5">';
+          subs.forEach(function (s) {
+            var st = ganttType[s.type];
+            var sPeriod = ganttPeriod(s, lang);
+            html += '<p class="text-xs leading-snug text-slate">';
+            html += '<span class="mr-1 inline-block h-2.5 w-2.5 rounded-[3px] align-[-1px] ' + st.dot + '"></span>';
+            html += '<span class="font-semibold text-navy">' + ganttEsc(t(st.badge, lang)) + ' &middot; ' + ganttEsc(sPeriod) + '</span>';
+            html += ' <span class="text-slate/90">&middot;</span> ' + ganttEsc(ganttSel(s.display, lang));
+            html += '</p>';
+          });
+          html += '</div>';
+        }
+        html += '<button type="button" data-gantt-open="' + ganttRowsData.indexOf(r) + '" class="mt-3 inline-flex items-center gap-1.5 rounded-none border border-navy/20 bg-bg px-3 py-1.5 text-xs font-semibold text-navy transition hover:border-accent hover:bg-primary hover:text-white">';
+        html += ganttEsc(t("exp.readMore", lang));
+        html += '<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+        html += '</button>';
+        html += '</article>';
+      });
+      container.innerHTML = html;
+    }
+
+    function renderView(lang) {
+      if (currentView === "list") { renderList(lang); } else { renderGantt(lang); }
+    }
+
     function ganttFrac(y) { return (y - GANTT_START) / (GANTT_END - GANTT_START); }
 
     function ganttEsc(s) {
@@ -412,14 +497,38 @@
         ganttFilterBtns.forEach(function (b) {
           var active = b === btn;
           b.classList.toggle("bg-accentlight", active);
-          b.classList.toggle("text-navy", active);
           b.classList.toggle("border-accentlight", active);
-          b.classList.toggle("bg-white/10", !active);
-          b.classList.toggle("text-white", !active);
-          b.classList.toggle("border-white/25", !active);
+          b.classList.toggle("bg-white", !active);
+          b.classList.toggle("border-navy/25", !active);
           b.setAttribute("aria-pressed", active ? "true" : "false");
         });
-        renderGantt(document.documentElement.lang);
+        renderView(document.documentElement.lang);
+      });
+    });
+
+    var viewBtns = document.querySelectorAll("[data-view-toggle]");
+    var ganttPanel = document.getElementById("ganttPanel");
+    var ganttList = document.getElementById("ganttList");
+    var expTitle = document.getElementById("expTitle");
+    viewBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentView = btn.getAttribute("data-view-toggle");
+        viewBtns.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle("bg-accentlight", active);
+          b.classList.toggle("border-accentlight", active);
+          b.classList.toggle("bg-white", !active);
+          b.classList.toggle("border-navy/25", !active);
+          b.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        if (expTitle) {
+          var key = currentView === "list" ? "exp.listTitle" : "exp.ganttTitle";
+          expTitle.setAttribute("data-i18n", key);
+          expTitle.textContent = t(key, document.documentElement.lang);
+        }
+        if (ganttPanel) ganttPanel.classList.toggle("hidden", currentView === "list");
+        if (ganttList) ganttList.classList.toggle("hidden", currentView !== "list");
+        renderView(document.documentElement.lang);
       });
     });
 
@@ -440,8 +549,9 @@
         meta.forEach(function (m) { html += '<span class="text-sm font-semibold text-accenttext">' + m + '</span>'; });
         html += '</div>';
       }
-      if (r.desc) {
-        html += '<p class="mt-4 leading-relaxed text-navy">' + ganttEsc(ganttSel(r.desc, lang)) + '</p>';
+      var longDesc = r.descL ? ganttSel(r.descL, lang) : (r.desc ? ganttSel(r.desc, lang) : null);
+      if (longDesc) {
+        html += '<p class="mt-4 leading-relaxed text-navy">' + ganttEsc(longDesc) + '</p>';
       }
       var subs = r.sub || [];
       ["edu", "uppd"].forEach(function (bt) {
@@ -466,7 +576,7 @@
         html += '</ul>';
         html += '</div>';
       });
-      if (!subs.length && !r.desc) {
+      if (!subs.length && !longDesc) {
         html += '<p class="mt-4 text-sm leading-relaxed text-slate">' + ganttEsc(ganttSel(r.display, lang)) + ', ' + ganttEsc(ganttPeriod(r, lang)) + '</p>';
       }
       return html;

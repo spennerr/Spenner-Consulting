@@ -77,17 +77,8 @@
     
     <section class="relative flex min-h-[300px] items-center border-b border-white/15 md:min-h-[340px]">
       <div class="mx-auto w-full max-w-4xl px-4 py-20 text-center sm:px-6">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accentlight"><span class="h-2 w-2 rounded-full bg-accentlight"></span><span data-i18n="exp.eyebrow">Erfarenheter</span></span>
-        <h1 class="mt-4 font-display text-5xl font-bold tracking-tight text-white sm:text-6xl" data-i18n="exp.title">Erfarenheter</h1>
+        <h1 class="font-display text-5xl font-bold tracking-tight text-white sm:text-6xl" data-i18n="exp.title">Erfarenheter</h1>
         <span class="mx-auto mt-6 block h-1 w-16 rounded-full bg-accentlight"></span>
-
-        
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-2" role="group" aria-label="Filtrera Gantt-schemat">
-          <button type="button" data-gantt-filter="all" aria-pressed="true" class="rounded-full border border-accentlight bg-accentlight px-4 py-2 text-sm font-medium text-navy transition" data-i18n="exp.filterAll">Alla</button>
-          <button type="button" data-gantt-filter="anst" aria-pressed="false" class="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy" data-i18n="exp.filterAnst">Anställningar</button>
-          <button type="button" data-gantt-filter="uppd" aria-pressed="false" class="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy" data-i18n="exp.filterUppd">Uppdrag</button>
-          <button type="button" data-gantt-filter="edu" aria-pressed="false" class="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy" data-i18n="exp.filterEdu">Utbildningar</button>
-        </div>
       </div>
     </section>
 
@@ -96,16 +87,22 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="rounded-3xl border border-navy/10 bg-bg/95 p-8 shadow-xl backdrop-blur sm:p-10">
         <span class="mb-4 block h-1 w-14 rounded-full bg-accent"></span>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl" data-i18n="exp.ganttTitle">Min yrkesbana, i ett Gantt-schema</h2>
+        <h2 id="expTitle" class="font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl" data-i18n="exp.ganttTitle">Min yrkesbana, i ett Gantt-schema</h2>
 
         
-        <div class="mt-10 flex flex-wrap items-center gap-3 text-xs font-semibold">
-          <span class="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-1.5 shadow-sm"><span class="h-3 w-6 rounded-sm bg-gantt-anst"></span> <span data-i18n="exp.legendAnst">Anställning</span></span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-1.5 shadow-sm"><span class="h-3 w-6 rounded-sm bg-gantt-uppd"></span> <span data-i18n="exp.legendUppd">Uppdrag</span></span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-1.5 shadow-sm"><span class="h-3 w-6 rounded-sm bg-gantt-edu"></span> <span data-i18n="exp.legendEdu">Utbildning & kompetens</span></span>
+        <div class="mt-10 flex flex-wrap items-center gap-2" role="group" aria-label="Filtrera">
+          <button type="button" data-gantt-filter="all" aria-pressed="true" class="inline-flex items-center gap-2 rounded-full border border-accentlight bg-accentlight px-4 py-2 text-sm font-semibold text-navy transition" data-i18n="exp.filterAll">Alla</button>
+          <button type="button" data-gantt-filter="anst" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-anst"></span> <span data-i18n="exp.filterAnst">Anställningar</span></button>
+          <button type="button" data-gantt-filter="uppd" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-uppd"></span> <span data-i18n="exp.filterUppd">Uppdrag</span></button>
+          <button type="button" data-gantt-filter="edu" aria-pressed="false" class="inline-flex items-center gap-2 rounded-full border border-navy/25 bg-white px-4 py-2 text-sm font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy"><span class="h-3 w-6 rounded-sm bg-gantt-edu"></span> <span data-i18n="exp.filterEdu">Utbildningar</span></button>
         </div>
 
-        <div class="mt-8 pb-4">
+        <div class="mt-5 flex flex-wrap items-center gap-2" role="group" aria-label="Välj visning">
+          <button type="button" data-view-toggle="gantt" aria-pressed="true" class="rounded-none border-2 border-accentlight bg-accentlight px-6 py-3 text-base font-semibold text-navy transition hover:-translate-y-0.5" data-i18n="exp.viewGantt">Tidslinje</button>
+          <button type="button" data-view-toggle="list" aria-pressed="false" class="rounded-none border-2 border-navy/25 bg-white px-6 py-3 text-base font-semibold text-navy transition hover:-translate-y-0.5 hover:border-accentlight hover:bg-accentlight hover:text-navy" data-i18n="exp.viewList">Lista</button>
+        </div>
+
+        <div id="ganttPanel" class="mt-8 pb-4">
           <div>
             
             <div class="flex gap-6">
@@ -117,6 +114,8 @@
             <div id="ganttRows"></div>
           </div>
         </div>
+
+        <div id="ganttList" class="mt-10 hidden"></div>
         </div>
       </div>
     </section>
@@ -163,6 +162,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=32"></script>
+  <script src="js/main.js?v=36"></script>
 </body>
 </html>
