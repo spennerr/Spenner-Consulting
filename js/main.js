@@ -10,7 +10,7 @@
     "nav.boka":       { sv: "Boka Möte",           en: "Book a Meeting" },
     "a11y.skip":      { sv: "Hoppa till innehåll", en: "Skip to content" },
     "i18n.toggle":    { sv: "Byt språk till engelska", en: "Switch to Swedish" },
-    "home.story":     { sv: "SPENNER Consulting finns för att skapa ordning i det som känns komplext och rörigt.", en: "SPENNER Consulting exists to create order in what feels complex and messy." },
+    "home.story":     { sv: "Finns för att skapa ordning i det som känns komplext och rörigt.", en: "Exists to create order in what feels complex and messy." },
     "hero.tjanster":  { sv: "Mina tjänster", en: "My Services" },
     "home.visionEyebrow": { sv: "Vision", en: "Vision" },
     "home.visionTitle": { sv: "Att göra det komplexa enkelt.", en: "Making the complex simple." },
