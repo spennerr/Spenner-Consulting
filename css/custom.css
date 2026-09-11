@@ -1,0 +1,79 @@
+html { scroll-behavior: smooth; }
+
+body.page-home {
+  background-image: url("../images/Hemsida%20Bakgrund.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.page-home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 36, 42, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.page-kontakt {
+  background-image: url("../images/Kontakt.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.page-kontakt::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 36, 42, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.page-tinted {
+  background-image: url("../images/Hemsida%20Bakgrund.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.page-tinted::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 36, 42, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.font-display { letter-spacing: -0.02em; }
+
+.gantt-track {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(27, 36, 42, 0.08) 0px, rgba(27, 36, 42, 0.08) 1px,
+    transparent 1px, transparent 10.638%
+  );
+}
+
+h1, h2, h3 { font-family: var(--font-display); }
+
+header a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
