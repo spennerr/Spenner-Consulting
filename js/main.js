@@ -163,8 +163,8 @@
     /* ---------- Language / i18n ---------- */
     var savedLang = localStorage.getItem("sc-lang") || "sv";
     var cvPdf = {
-      sv: "Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Swe.docx.pdf",
-      en: "Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Eng.docx.pdf"
+      sv: "Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Swe.pdf",
+      en: "Cv%20l%C3%A4nk/Curriculum%20Vitae%20Glenn%20Spenner%20Eng.pdf"
     };
     function setLang(lang, persist) {
       document.documentElement.lang = lang;
