@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
-    @theme {
+    :root {
       --color-bg: #f4f1ee;
       --color-surface: #d9d3cb;
       --color-stone: #d9d3cb;
@@ -27,7 +27,41 @@
       --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
       --font-display: "Playfair Display", Georgia, serif;
     }
-</style>
+
+    .bg-bg { background-color: var(--color-bg); }
+    .bg-surface { background-color: var(--color-surface); }
+    .bg-stone { background-color: var(--color-stone); }
+    .bg-accent { background-color: var(--color-accent); }
+    .bg-accentlight { background-color: var(--color-accentlight); }
+    .bg-accentstrong { background-color: var(--color-accentstrong); }
+    .bg-navy { background-color: var(--color-navy); }
+    .bg-slate { background-color: var(--color-slate); }
+    .bg-primary { background-color: var(--color-primary); }
+    .bg-accenttext { background-color: var(--color-accenttext); }
+    .bg-teal { background-color: var(--color-teal); }
+
+    .text-bg { color: var(--color-bg); }
+    .text-surface { color: var(--color-surface); }
+    .text-stone { color: var(--color-stone); }
+    .text-accent { color: var(--color-accent); }
+    .text-accentlight { color: var(--color-accentlight); }
+    .text-accentstrong { color: var(--color-accentstrong); }
+    .text-navy { color: var(--color-navy); }
+    .text-slate { color: var(--color-slate); }
+    .text-primary { color: var(--color-primary); }
+    .text-accenttext { color: var(--color-accenttext); }
+    .text-teal { color: var(--color-teal); }
+
+    .font-sans { font-family: var(--font-sans); }
+    .font-display { font-family: var(--font-display); }
+
+    .border-accentlight { border-color: var(--color-accentlight); }
+    .border-accent { border-color: var(--color-accent); }
+    .border-navy { border-color: var(--color-navy); }
+    .text-white\/70 { color: rgba(255, 255, 255, 0.7); }
+    .text-white\/60 { color: rgba(255, 255, 255, 0.6); }
+    .text-white\/85 { color: rgba(255, 255, 255, 0.85); }
+  </style>
 </head>
 <body class="page-home bg-bg text-navy font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehåll</a>
