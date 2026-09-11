@@ -1,17 +1,5 @@
-/* ============================================================
-   Spenner Consulting – animations & extra utilities
-   Tailwind v4 (loadCSS in-browser) generates the utility classes.
-   ============================================================ */
-
-@keyframes floatGlenn {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
-}
-.animate-float-glenn { animation: floatGlenn 6s ease-in-out infinite; }
-
 html { scroll-behavior: smooth; }
 
-/* Full-page background image – only applied on the home page (body.page-home) */
 body.page-home {
   background-image: url("../images/Hemsida%20Bakgrund.png");
   background-size: cover;
@@ -20,7 +8,6 @@ body.page-home {
   background-repeat: no-repeat;
 }
 
-/* Dark overlay so text stays readable over the full-page background */
 body.page-home::before {
   content: "";
   position: fixed;
@@ -30,7 +17,6 @@ body.page-home::before {
   z-index: -1;
 }
 
-/* Full-page background image – contact page */
 body.page-kontakt {
   background-image: url("../images/Kontakt.jpg");
   background-size: cover;
@@ -48,9 +34,8 @@ body.page-kontakt::before {
   z-index: -1;
 }
 
-/* Full-page tinted background – services / about / experience pages */
 body.page-tinted {
-  background-image: url("../images/tintad%20bakgrund.png");
+  background-image: url("../images/Hemsida%20Bakgrund.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -61,14 +46,13 @@ body.page-tinted::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-color: rgba(27, 36, 42, 0.3);
+  background-color: rgba(27, 36, 42, 0.55);
   pointer-events: none;
   z-index: -1;
 }
 
 .font-display { letter-spacing: -0.02em; }
 
-/* Gantt chart: vertical gridlines every 5 years (1980–2027 = 47 years, 5/47 ≈ 10.638%) */
 .gantt-track {
   background-image: repeating-linear-gradient(
     to right,
@@ -77,20 +61,14 @@ body.page-tinted::before {
   );
 }
 
-/* Headings in Playfair Display, body in Inter (--font-sans) */
 h1, h2, h3 { font-family: var(--font-display); }
 
-/* Hero brand heading */
-.font-quattrocento { font-family: "Quattrocento Sans", "Helvetica Neue", Arial, sans-serif; }
-
-/* Header navigation links: Playfair Display, uppercase */
 header a {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
-/* Subtle focus ring that respects the element's own text colour */
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
@@ -98,5 +76,4 @@ header a {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-float-glenn { animation: none; }
 }

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spenner Consulting – Projektledning & Managementkonsulting</title>
-  <meta name="description" content="SPENNER Consulting finns för att skapa ordning i det som känns komplext och rörigt – projektledning och managementkonsulting med tydlighet, riktning och resultat.">
+  <title>Spenner Consulting | Projektledning & Managementkonsulting</title>
+  <meta name="description" content="SPENNER Consulting finns för att skapa ordning i det som känns komplext och rörigt, projektledning och managementkonsulting med tydlighet, riktning och resultat.">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
-    :root {
+    @theme {
       --color-bg: #f4f1ee;
       --color-surface: #d9d3cb;
       --color-stone: #d9d3cb;
@@ -23,50 +23,20 @@
       --color-slate: #394b56;
       --color-primary: #1b242a;
       --color-accenttext: #273f3e;
-      --color-teal: #ad9984;
+      --color-ochre: #c28d4b;
+      --color-terracotta: #b86b53;
+      --color-sage: #98a593;
+      --color-plum: #42363f;
+      --color-teal: #273f3e;
       --font-sans: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
       --font-display: "Playfair Display", Georgia, serif;
     }
-
-    .bg-bg { background-color: var(--color-bg); }
-    .bg-surface { background-color: var(--color-surface); }
-    .bg-stone { background-color: var(--color-stone); }
-    .bg-accent { background-color: var(--color-accent); }
-    .bg-accentlight { background-color: var(--color-accentlight); }
-    .bg-accentstrong { background-color: var(--color-accentstrong); }
-    .bg-navy { background-color: var(--color-navy); }
-    .bg-slate { background-color: var(--color-slate); }
-    .bg-primary { background-color: var(--color-primary); }
-    .bg-accenttext { background-color: var(--color-accenttext); }
-    .bg-teal { background-color: var(--color-teal); }
-
-    .text-bg { color: var(--color-bg); }
-    .text-surface { color: var(--color-surface); }
-    .text-stone { color: var(--color-stone); }
-    .text-accent { color: var(--color-accent); }
-    .text-accentlight { color: var(--color-accentlight); }
-    .text-accentstrong { color: var(--color-accentstrong); }
-    .text-navy { color: var(--color-navy); }
-    .text-slate { color: var(--color-slate); }
-    .text-primary { color: var(--color-primary); }
-    .text-accenttext { color: var(--color-accenttext); }
-    .text-teal { color: var(--color-teal); }
-
-    .font-sans { font-family: var(--font-sans); }
-    .font-display { font-family: var(--font-display); }
-
-    .border-accentlight { border-color: var(--color-accentlight); }
-    .border-accent { border-color: var(--color-accent); }
-    .border-navy { border-color: var(--color-navy); }
-    .text-white\/70 { color: rgba(255, 255, 255, 0.7); }
-    .text-white\/60 { color: rgba(255, 255, 255, 0.6); }
-    .text-white\/85 { color: rgba(255, 255, 255, 0.85); }
   </style>
 </head>
-<body class="page-home bg-bg text-navy font-sans antialiased">
+<body class="page-home flex min-h-screen flex-col bg-bg text-navy font-sans antialiased">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-none focus:bg-navy focus:px-4 focus:py-2 focus:text-white" data-i18n="a11y.skip">Hoppa till innehåll</a>
 
-  <!-- ===== Header ===== -->
+  
   <header class="absolute inset-x-0 top-0 z-20 border-b border-white/15 bg-transparent backdrop-blur-sm">
     <nav class="relative mx-auto flex h-16 max-w-6xl items-center justify-end px-4 sm:px-6 md:justify-center" aria-label="Huvudnavigering">
 
@@ -74,88 +44,90 @@
         <img src="images/spenner-logo-white.svg" alt="Spenner Consulting" class="h-7 w-auto sm:h-8">
       </a>
 
-      <!-- Desktop navigation -->
+      
       <div class="hidden items-center gap-1 md:flex">
-        <a href="index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accentlight" data-i18n="nav.hem">Hem</a>
-        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accentlight" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accentlight" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="erfarenheter.html" class="px-3 py-2 text-sm font-medium text-white hover:text-accentlight" data-i18n="nav.erfarenheter">Erfarenheter</a>
-        <a href="kontakt.html" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
-        <button type="button" class="ml-1 rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white hover:border-accent" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <a href="index.html" class="px-3 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="px-3 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="px-3 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="erfarenheter.html" class="px-3 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.erfarenheter">Erfarenheter</a>
+        <a href="kontakt.html" class="ml-2 rounded-none bg-primary px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+        <button type="button" class="ml-1 rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-accentlight" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
       </div>
 
-      <!-- Mobile controls -->
+      
       <div class="flex items-center gap-1 md:hidden">
         <a href="kontakt.html" class="rounded-none bg-primary px-3 py-2 text-xs font-medium text-white" data-i18n="nav.boka">Boka Möte</a>
-        <button type="button" class="rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
-        <button type="button" data-nav-toggle class="p-2 text-white" aria-label="Öppna meny" aria-expanded="false">
+        <button type="button" class="rounded-none border border-white/30 px-3 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-accentlight" data-lang-toggle aria-label="Byt språk till engelska">EN</button>
+        <button type="button" data-nav-toggle class="p-2 text-white transition hover:-translate-y-0.5 hover:text-accentlight" aria-label="Öppna meny" aria-expanded="false">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <!-- Mobile menu -->
+    
     <div class="hidden border-t border-white/15 bg-navy/90 backdrop-blur md:hidden" data-nav-menu id="navMenu">
       <div class="flex flex-col gap-1 px-4 py-3">
-        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10" data-i18n="nav.hem">Hem</a>
-        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="erfarenheter.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10" data-i18n="nav.erfarenheter">Erfarenheter</a>
-        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10" data-i18n="nav.kontakt">Kontakt</a>
+        <a href="index.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="erfarenheter.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.erfarenheter">Erfarenheter</a>
+        <a href="kontakt.html" class="rounded-lg px-3 py-2.5 text-base font-medium text-white transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.kontakt">Kontakt</a>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- ===== Hero / Storytelling ===== -->
+  <main id="main" class="flex-1">
+    
     <section class="relative overflow-hidden">
-      <div class="relative mx-auto flex min-h-[560px] w-full max-w-4xl flex-col items-center justify-center px-4 py-32 text-center sm:px-6 md:min-h-[660px]">
+      <div class="relative mx-auto flex min-h-[400px] w-full max-w-4xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 md:min-h-[500px]">
         <h1>
-          <img src="images/spenner-logo-white.svg" alt="Spenner Consulting" class="h-20 w-auto sm:h-24">
+          <img src="images/spenner-logo-white.svg" alt="Spenner Consulting" class="h-16 w-auto sm:h-20">
         </h1>
-        <p class="mx-auto mt-8 max-w-3xl font-display text-2xl font-semibold leading-relaxed text-white sm:text-3xl" data-i18n="home.story">
+        <p class="mx-auto mt-6 max-w-3xl font-display text-2xl font-semibold leading-relaxed text-white sm:text-3xl" data-i18n="home.story">
           SPENNER Consulting finns för att skapa ordning i det som känns komplext och rörigt.
         </p>
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href="kontakt.html#boka" class="inline-flex rounded-none bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
-          <a href="tjanster.html" class="inline-flex rounded-none border border-white/50 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-accentlight hover:border-accentlight hover:text-navy" data-i18n="hero.tjanster">Mina tjänster</a>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="kontakt.html#boka" class="inline-flex rounded-none bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-accentlight hover:text-navy" data-i18n="nav.boka">Boka Möte</a>
+          <a href="tjanster.html" class="inline-flex rounded-none border border-white/50 px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-accentlight hover:border-accentlight hover:text-navy" data-i18n="hero.tjanster">Mina tjänster</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== About box ===== -->
-    <section class="py-16 sm:py-20">
+    
+    <section class="-mt-12 pt-0 pb-10 sm:-mt-16 sm:pb-12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="w-full rounded-2xl bg-slate p-10 shadow-2xl sm:p-14">
-          <h2 class="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl" data-i18n="home.aboutTitle">Om Spenner Consulting</h2>
-          <span class="mt-6 block h-1 w-16 rounded-full bg-accentlight"></span>
-          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-white/85" data-i18n="home.aboutText">SPENNER Consulting drivs av Glenn Spenner. Jag hjälper företag och ledare att skapa klarhet, fatta bättre beslut och nå hållbara resultat. Med strategisk rådgivning, affärsförståelse och ett pragmatiskt arbetssätt skapar jag verkligt värde – på riktigt.</p>
-          <p class="mt-8 font-display text-2xl italic text-accentlight" data-i18n="home.aboutSign">– Glenn Spenner</p>
-        </div>
+        <h2 class="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl" data-i18n="home.aboutTitle">Om Spenner Consulting</h2>
+        <span class="mt-5 block h-1 w-16 rounded-full bg-accentlight"></span>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/85" data-i18n="home.aboutText1">SPENNER Consulting drivs av Glenn Spenner.</p>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/85" data-i18n="home.aboutText2">Jag hjälper företag och ledare att skapa klarhet, fatta bättre beslut och nå hållbara resultat. Med strategisk rådgivning, affärsförståelse och ett pragmatiskt arbetssätt skapar jag verkligt värde på riktigt.</p>
+        <p class="mt-8 font-display text-2xl italic text-accentlight" data-i18n="home.aboutSign">Glenn Spenner</p>
       </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
-  <footer class="border-t border-white/15 bg-primary">
-    <div class="mx-auto flex max-w-6xl flex-wrap items-baseline justify-between gap-x-8 gap-y-3 px-4 py-6 text-sm text-white sm:px-6">
-      <span class="font-bold tracking-tight">Spenner<span class="text-accentlight"> Consulting</span></span>
-      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Sidfot">
-        <a href="index.html" class="text-white/80 hover:text-accentlight" data-i18n="nav.hem">Hem</a>
-        <a href="tjanster.html" class="text-white/80 hover:text-accentlight" data-i18n="nav.tjanster">Tjänster</a>
-        <a href="om-glenn.html" class="text-white/80 hover:text-accentlight" data-i18n="nav.omGlenn">Om Glenn</a>
-        <a href="erfarenheter.html" class="text-white/80 hover:text-accentlight" data-i18n="nav.erfarenheter">Erfarenheter</a>
-        <a href="kontakt.html" class="text-white/80 hover:text-accentlight" data-i18n="nav.kontakt">Kontakt</a>
+  
+  <footer class="border-t border-white/10 bg-primary">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <a href="index.html" class="inline-block" aria-label="Spenner Consulting">
+          <img src="images/spenner-logo-white.svg" alt="Spenner Consulting" class="h-9 w-auto sm:h-10">
+        </a>
+        <p class="mt-3 text-xs text-white/50">&copy; <span data-year>2026</span> <span data-i18n="ft.copyright">Spenner Consulting. Alla rättigheter förbehållna.</span></p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-x-7 gap-y-3" aria-label="Sidfot">
+        <a href="index.html" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.hem">Hem</a>
+        <a href="tjanster.html" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.tjanster">Tjänster</a>
+        <a href="om-glenn.html" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.omGlenn">Om Glenn</a>
+        <a href="erfarenheter.html" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.erfarenheter">Erfarenheter</a>
+        <a href="kontakt.html" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight" data-i18n="nav.kontakt">Kontakt</a>
       </nav>
-      <a href="mailto:consulting@spenner.com" class="text-white/80 hover:text-accentlight">consulting@spenner.com</a>
-    </div>
-    <div class="border-t border-white/10">
-      <div class="mx-auto max-w-6xl px-4 py-3 text-center text-xs text-white/50 sm:px-6">
-        &copy; <span data-year>2026</span> <span data-i18n="ft.copyright">Spenner Consulting. Alla rättigheter förbehållna.</span>
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="mailto:consulting@spenner.com" class="text-sm text-white/70 transition hover:-translate-y-0.5 hover:text-accentlight">consulting@spenner.com</a>
+        <a href="kontakt.html#boka" class="inline-flex rounded-none bg-accentlight px-5 py-2.5 text-sm font-semibold text-navy transition hover:-translate-y-0.5" data-i18n="nav.boka">Boka Möte</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=22"></script>
+  <script src="js/main.js?v=32"></script>
 </body>
 </html>
