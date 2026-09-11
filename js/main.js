@@ -123,6 +123,7 @@
     "ct.send":        { sv: "Skicka bokningsförfrågan", en: "Send booking request" },
     "ct.sending":     { sv: "Skickar…", en: "Sending…" },
     "ct.err":         { sv: "Var vänlig fyll i alla obligatoriska fält korrekt.", en: "Please fill in all required fields correctly." },
+    "ct.fail":        { sv: "Något gick fel. Försök igen, eller mejla mig direkt på consulting@spenner.com.", en: "Something went wrong. Please try again, or email me directly at consulting@spenner.com." },
     "ct.successPre":  { sv: "Tack ", en: "Thank you " },
     "ct.successMid":  { sv: "! Din bokningsförfrågan har skickats. Jag återkommer inom en vardag.", en: "! Your booking request has been sent. I will get back to you within one business day." },
     "ct.hours":       { sv: "Svarstid", en: "Response time" },
@@ -636,11 +637,12 @@
     }
 
     
+    var FORM_ENDPOINT = "https://formspree.io/f/mbgjbqbl";
+
     var form = document.getElementById("contactForm");
     if (form) {
       var statusEl = document.getElementById("formStatus");
       var sendBtn = form.querySelector("button[type=submit]");
-      var sendOriginal = sendBtn ? sendBtn.textContent : "";
 
       function setStatus(message, type) {
         statusEl.textContent = message;
@@ -677,22 +679,33 @@
 
         if (!valid) { setStatus(t("ct.err", lang), "error"); if (firstInvalid) firstInvalid.focus(); return; }
 
+        var subjectSel = document.getElementById("subject");
+        var subject = subjectSel && subjectSel.selectedIndex >= 0 ? subjectSel.options[subjectSel.selectedIndex].text : "";
         var data = {
           name: name.value.trim(),
           email: email.value.trim(),
           company: (document.getElementById("company") || {}).value ?
             document.getElementById("company").value.trim() : "",
-          subject: (document.getElementById("subject") || {}).value || "",
-          message: message.value.trim()
+          subject: subject,
+          message: message.value.trim(),
+          _subject: t("ct.forTitle", lang)
         };
 
         if (sendBtn) sendBtn.textContent = t("ct.sending", lang);
 
-        setTimeout(function () {
+        fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
           form.reset();
           setStatus(t("ct.successPre", lang) + data.name + t("ct.successMid", lang), "success");
-          if (sendBtn && sendOriginal) sendBtn.textContent = sendOriginal;
-        }, 400);
+        }).catch(function () {
+          setStatus(t("ct.fail", lang), "error");
+        }).finally(function () {
+          if (sendBtn) sendBtn.textContent = t("ct.send", lang);
+        });
       });
     }
 
