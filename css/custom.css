@@ -1,7 +1,7 @@
 html { scroll-behavior: smooth; }
 
 body.page-home {
-  background-image: url("../images/Hemsida%20Bakgrund.png");
+  background-image: url("../images/bg-home.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -18,7 +18,7 @@ body.page-home::before {
 }
 
 body.page-kontakt {
-  background-image: url("../images/Kontakt.jpg");
+  background-image: url("../images/bg-kontakt.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -35,7 +35,7 @@ body.page-kontakt::before {
 }
 
 body.page-tinted {
-  background-image: url("../images/Hemsida%20Bakgrund.png");
+  background-image: url("../images/bg-home.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -52,6 +52,21 @@ body.page-tinted::before {
 }
 
 .font-display { letter-spacing: -0.02em; }
+
+@media (max-width: 768px) {
+  body.page-home,
+  body.page-tinted,
+  body.page-kontakt {
+    background-attachment: scroll;
+  }
+  body.page-home,
+  body.page-tinted {
+    background-image: url("../images/bg-home-mobil.jpg");
+  }
+  body.page-kontakt {
+    background-image: url("../images/bg-kontakt-mobil.jpg");
+  }
+}
 
 .gantt-track {
   background-image: repeating-linear-gradient(

@@ -84,7 +84,8 @@
     "exp.legendUppd": { sv: "Uppdrag", en: "Assignment" },
     "exp.legendEdu":  { sv: "Utbildning & kompetens", en: "Education & skills" },
     "exp.axisYear":   { sv: "År", en: "Year" },
-    "exp.today":      { sv: "i dag", en: "today" },
+    "exp.now":        { sv: "nu", en: "now" },
+    "exp.nowAxis":    { sv: "Nu", en: "Now" },
     "exp.badgeAnst":  { sv: "Anställning", en: "Employment" },
     "exp.badgeUppd":  { sv: "Uppdrag", en: "Assignment" },
     "exp.badgeEdu":   { sv: "Utbildning", en: "Education" },
@@ -176,13 +177,12 @@
       if (persist) localStorage.setItem("sc-lang", lang);
       if (typeof renderView === "function") renderView(lang);
     }
-    var langBtn = document.querySelector("[data-lang-toggle]");
-    if (langBtn) {
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (langBtn) {
       langBtn.addEventListener("click", function () {
         var next = document.documentElement.lang === "sv" ? "en" : "sv";
         setLang(next, true);
       });
-    }
+    });
     
     var GANTT_START = 1980;
     var GANTT_END = 2027;
@@ -295,7 +295,7 @@
 
     function ganttPeriod(r, lang) {
       var from = ganttYearLabel(r.from);
-      if (r.to === null) return from + ", " + t("exp.today", lang);
+      if (r.to === null) return from + " – " + t("exp.now", lang);
       if (Math.round(r.from) === Math.round(r.to)) return from;
       return from + " – " + ganttYearLabel(r.to);
     }
@@ -316,18 +316,23 @@
       return 10;
     }
 
-    function renderGanttAxis() {
+    function renderGanttAxis(lang) {
       var axis = document.getElementById("ganttAxis");
       if (!axis) return;
       var step = ganttAxisStep();
+      var newest = GANTT_END - 1;
       var html = "";
-      for (var y = GANTT_END - 1; y >= GANTT_START + 2; y--) {
-        var since = GANTT_END - y;
-        if (y !== GANTT_END - 1 && y % step !== 0) continue;
-        var major = y % 10 === 0;
-        var cls = major ? "font-bold text-navy" : "text-slate";
-        var shift = y >= GANTT_END - 1 ? "-translate-x-0" : (y <= GANTT_START + 2 ? "-translate-x-full" : "-translate-x-1/2");
-        html += '<span class="absolute top-0 ' + shift + ' ' + cls + '" style="left:' + ((1 - ganttFrac(y)) * 100).toFixed(2) + '%">' + y + '</span>';
+      for (var y = newest; y >= GANTT_START; y--) {
+        if (y !== newest && (y % step !== 0 || newest - y < step * 0.5)) continue;
+        var pos = "left:" + ((1 - ganttFrac(y)) * 100).toFixed(2) + "%";
+        var isNewest = y === newest;
+        var isOldest = y <= GANTT_START + 1;
+        var cls = isNewest ? "font-bold text-accenttext" : (y % 10 === 0 ? "font-bold text-navy" : "font-medium text-slate");
+        var shift = isNewest ? "-translate-x-0" : (isOldest ? "-translate-x-full" : "-translate-x-1/2");
+        var label = isNewest ? t("exp.nowAxis", lang) : String(y);
+        html += '<span class="pointer-events-none absolute top-0.5 whitespace-nowrap text-[0.6875rem] tabular-nums sm:text-xs ' + shift + ' ' + cls + '" style="' + pos + '">' + ganttEsc(label) + '</span>';
+        html += '<span class="pointer-events-none absolute top-6 w-px bg-navy/25" style="' + pos + ';height:7px"></span>';
+        html += '<span class="pointer-events-none absolute top-8 w-px bg-navy/[0.07]" style="' + pos + ';height:2400px"></span>';
       }
       axis.innerHTML = html;
     }
@@ -348,7 +353,7 @@
     function renderGantt(lang) {
       var container = document.getElementById("ganttRows");
       if (!container) return;
-      renderGanttAxis();
+      renderGanttAxis(lang);
       var eduSeen = {};
       var html = "";
       ganttRowsData.forEach(function (r) {
@@ -409,7 +414,7 @@
           });
           html += '</div>';
         }
-        html += '<button type="button" data-gantt-open="' + ganttRowsData.indexOf(r) + '" class="mt-3 inline-flex items-center gap-1.5 rounded-none border border-navy/20 bg-bg px-3 py-1.5 text-xs font-semibold text-navy transition hover:border-accent hover:bg-primary hover:text-white">';
+        html += '<button type="button" data-gantt-open="' + ganttRowsData.indexOf(r) + '" class="mt-3 inline-flex items-center gap-1.5 rounded-none border border-navy/20 bg-bg px-3.5 py-2 text-xs font-semibold text-navy transition hover:border-accent hover:bg-primary hover:text-white">';
         html += ganttEsc(t("exp.readMore", lang));
         html += '<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
         html += '</button>';
@@ -495,7 +500,7 @@
           });
           html += '</div>';
         }
-        html += '<button type="button" data-gantt-open="' + ganttRowsData.indexOf(r) + '" class="mt-3 inline-flex items-center gap-1.5 rounded-none border border-navy/20 bg-bg px-3 py-1.5 text-xs font-semibold text-navy transition hover:border-accent hover:bg-primary hover:text-white">';
+        html += '<button type="button" data-gantt-open="' + ganttRowsData.indexOf(r) + '" class="mt-3 inline-flex items-center gap-1.5 rounded-none border border-navy/20 bg-bg px-3.5 py-2 text-xs font-semibold text-navy transition hover:border-accent hover:bg-primary hover:text-white">';
         html += ganttEsc(t("exp.readMore", lang));
         html += '<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
         html += '</button>';
