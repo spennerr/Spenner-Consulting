@@ -61,6 +61,16 @@ body.page-tinted::before {
   );
 }
 
+.gantt-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(27, 36, 42, 0.28) rgba(27, 36, 42, 0.06);
+}
+
+.gantt-scroll::-webkit-scrollbar { height: 8px; }
+.gantt-scroll::-webkit-scrollbar-track { background: rgba(27, 36, 42, 0.06); }
+.gantt-scroll::-webkit-scrollbar-thumb { background: rgba(27, 36, 42, 0.28); }
+
 h1, h2, h3 { font-family: var(--font-display); }
 
 header a {

@@ -215,7 +215,7 @@
       { from: 1999, to: 1999, type: "edu", display: { sv: "Oracle Databas", en: "Oracle Database" }, place: { sv: "Oracle · Malmö", en: "Oracle · Malmö" } },
       { from: 1998.166667, to: 1998.25, type: "uppd", display: { sv: "SAS", en: "SAS" }, place: { sv: "Köpenhamn", en: "Copenhagen" }, role: { sv: "Projektledare", en: "Project Manager" }, desc: { sv: "Projektgranskning av AMS (Airport management system).", en: "Project review of AMS (Airport management system)." } },
       { from: 1998, to: 1998, type: "edu", display: { sv: "Säljkurs", en: "Sales Training course" }, place: { sv: "Cultivator · Stockholm", en: "Cultivator · Stockholm" } },
-      { from: 1997, to: 1998.166667, type: "uppd", display: { sv: "Swebank", en: "Swebank" }, place: { sv: "Stockholm", en: "Stockholm" }, role: { sv: "Projektledare", en: "Project Manager" }, desc: { sv: "Utveckla en intranätlösning för banken som precis hade slagits samman.", en: "Develop an intranet solution for the bank that had just merged." } },
+      { from: 1997, to: 1998.166667, type: "uppd", display: { sv: "Swedbank", en: "Swedbank" }, place: { sv: "Stockholm", en: "Stockholm" }, role: { sv: "Projektledare", en: "Project Manager" }, desc: { sv: "Utveckla en intranätlösning för banken som precis hade slagits samman.", en: "Develop an intranet solution for the bank that had just merged." } },
       { from: 1997, to: 1998, type: "uppd", display: { sv: "SAS", en: "SAS" }, place: { sv: "Stockholm", en: "Stockholm" }, role: { sv: "Projektledare", en: "Project Manager" }, desc: { sv: "Lanserade en ny Eurobonus-produkt/-tjänst för frekventa resenärer och lojala kunder, samordnade marknadsföring, utbildade personal och samverkade med allianspartner.", en: "Launched a new Eurobonus product/service for frequent flyers and loyal customers, coordinated marketing, trained staff and collaborated with alliance partners." } },
       { from: 1997, to: 1997, type: "edu", display: { sv: "SPIN Säljkurs", en: "SPIN Sales Training course" }, place: { sv: "Huthwaite · Stockholm", en: "Huthwaite · Stockholm" } },
       { from: 1997, to: 1997, type: "edu", display: { sv: "PROPS (projektmetod)", en: "PROPS (project methodology)" }, place: { sv: "Ericsson Mobile · Stockholm", en: "Ericsson Mobile · Stockholm" } },
@@ -256,7 +256,7 @@
       { display: "IconMedialab AB", from: 2000, descL: { sv: "Managementkonsult med inriktning mot kunder vars mål varit att öka kundnyttan med hjälp av internet som en ny kanal mot marknaden. Affärs- och projektledning inom privata och offentliga verksamheter, t.ex. affärs- och projektledning för Öresundskraft.", en: "Management consultant focused on clients whose goal has been to increase customer value by means of the internet as a new channel to the market. Business and project management for private and public sector organizations, e.g. business and project management for Öresundskraft." } },
       { display: "AssiDomän, Förenade Well", from: 1999, descL: { sv: "Projektchef för implementering av ett nytt egenutvecklat och processorienterat affärssystem. Produkten bestod av ett antal standardsystem samt det egenutvecklade som skulle integreras för att utnyttja företagets processer till fullo. Projektet bestod av ca 20-25 personer i sex delprojekt: utveckling, drift, implementering, integration, konvertering och dokumentation, samt lika många från beställarsidan.", en: "Project manager for implementing a new in-house developed and process-oriented ERP system for the core business. The project involved nearly 50 project members within a period of 2 years. The system's objective was to support and optimize the business processes. The project was divided into seven subprojects – change management, development, migration, integration, documentation, implementation and maintenance." } },
       { display: "SAS", from: 1998.166667, descL: { sv: "Projektgranskning av AMS (Airport management system). Ett kort uppdrag för att hjälpa kunden med att få ett objektivt underlag för val av lösning/system innan val av inköp.", en: "Project review of AMS (Airport management system). A short assignment to help the client obtain an objective basis for choosing a solution/system before making a purchasing decision." } },
-      { display: "Swebank", from: 1997, descL: { sv: "Startade med att arbeta fram en offert samt prototyp för ett nytt webbaserat kundstödssystem för bankkontoren i deras nya plattform GP2000. Under sommaren och hösten startade jag upp ett projekt för deras backoffice-funktioner för samma plattform. Målet var att införa ett nytt client/server-system. I oktober 1997 gick jag över som projektchef för deras intranätlösning vid namnet Kanal1. De huvudsakliga funktionerna var e-post, forum (diskussionsgrupper), ärendehantering samt sök- och dokumenthantering. Även den externa informationswebben ingick i affärsområdet. Projektet befann sig i ett skede för produktionssättning samt att förbereda version 2 av Kanal1. Det fanns under denna period ett enormt tryck på utveckling inom webbområdet, för att kunna sprida information i de båda fusionerande bankerna.", en: "Started by developing a quote and prototype for a new web-based customer support system for the bank branches in their new platform GP2000. During the summer and autumn, I started up a project for their back-office functions for the same platform. The goal was to introduce a new client/server system. In October 1997, I moved over as project manager for their intranet solution named Kanal1. The main functions were e-mail, forums (discussion groups), case management, and search/document management. The external information website was also included in the business area. The project was at a stage of going into production as well as preparing version 2 of Kanal1. During this period, there was enormous pressure on development within the web area, in order to be able to spread information in the two merging banks." } },
+      { display: "Swedbank", from: 1997, descL: { sv: "Startade med att arbeta fram en offert samt prototyp för ett nytt webbaserat kundstödssystem för bankkontoren i deras nya plattform GP2000. Under sommaren och hösten startade jag upp ett projekt för deras backoffice-funktioner för samma plattform. Målet var att införa ett nytt client/server-system. I oktober 1997 gick jag över som projektchef för deras intranätlösning vid namnet Kanal1. De huvudsakliga funktionerna var e-post, forum (diskussionsgrupper), ärendehantering samt sök- och dokumenthantering. Även den externa informationswebben ingick i affärsområdet. Projektet befann sig i ett skede för produktionssättning samt att förbereda version 2 av Kanal1. Det fanns under denna period ett enormt tryck på utveckling inom webbområdet, för att kunna sprida information i de båda fusionerande bankerna.", en: "Started by developing a quote and prototype for a new web-based customer support system for the bank branches in their new platform GP2000. During the summer and autumn, I started up a project for their back-office functions for the same platform. The goal was to introduce a new client/server system. In October 1997, I moved over as project manager for their intranet solution named Kanal1. The main functions were e-mail, forums (discussion groups), case management, and search/document management. The external information website was also included in the business area. The project was at a stage of going into production as well as preparing version 2 of Kanal1. During this period, there was enormous pressure on development within the web area, in order to be able to spread information in the two merging banks." } },
       { display: "SAS", from: 1997, descL: { sv: "Projektledare för lanseringen av en ny produkt/tjänst/koncept till de mest lojala kunderna och frequent flyers. Samordnade marknadsföringsprocesser, både externa och interna, och fick allt på plats före lanseringen samt samordnade med allianspartner-flygbolagen. Utbildade stewarder och markpersonal på samtliga flygplatser. Planerade och genomförde programtjänsterna för en ny nivå av Eurobonus-kort för frequent flyer- och lojala kundgruppen, både SAS- och Diners-kort (co-branded).", en: "Project manager for the launch of a new product/service/concept to the most loyal customers and frequent flyers. Coordinated marketing processes, both external and internal, and got everything in place before the launch, as well as coordinating with alliance partner airlines. Trained cabin crew and ground staff at all airports. Planned and implemented the program services for a new tier of Eurobonus card for the frequent flyer and loyal customer group, both SAS and Diners cards (co-branded)." } },
       { display: "Ericsson Network Business (EBC)", from: 1996, descL: { sv: "Inhyrd som projektchef för ett projekt som innebar ett nytt sätt att göra radioplanering. EBC utvecklar en mjukvara vid namnet RAPS (Radio Planning System) som är verktyget för denna typ av planering. Projektet handlade om ny hantering av nät för att hantera DECT inom städer och framförallt inom tätbebyggda områden, dvs all överföring sker med radioöverföring istället för med nedgrävda fasta förbindelser. Pilotkunden, ett stort telefonbolag i England, implementerade detta under 1997.", en: "Project management for development of RAPS (Radio Planning System). New handling of wireless network (DECT) within urbanized areas. Pilot customer was a big telecom company in the UK." } },
       { display: "TietoEnator AB", from: 1995, descL: { sv: "Projektledning och verksamhetsutveckling som huvudinriktning med ett antal storföretag inom näringslivet på meritlistan, Föreningssparbanken, Ericsson, Tele2, SAS m.fl. Varit ansvarig för partnerskap med SAP och byggt upp enheten inom TietoEnator. Ansvarade för TietoEnators satsning på SAP i Sverige, först i Stockholm och sedan i Malmö. Koordinering samt kontakter med kunder och partners för att skapa affärsmöjligheter. Ansvaret för satsningen innebar till en början att bli en partner till SAP, vilket vi blev i september 1998.", en: "Project management and business development as the main focus, with a number of major corporations from the business sector on the track record, Föreningssparbanken, Ericsson, Tele2, SAS, among others. Was responsible for the partnership with SAP and built up the unit within TietoEnator. Was responsible for TietoEnator's initiative in SAP in Sweden, first in Stockholm and then in Malmö. Coordination as well as contacts with customers and partners to create business opportunities. The responsibility for the initiative initially meant becoming a partner to SAP, which we became in September 1998." } },
@@ -306,15 +306,40 @@
       edu:  { bar: "bg-gantt-edu", badge: "exp.badgeEdu", dot: "bg-gantt-edu" }
     };
 
+    function ganttAxisStep() {
+      var axis = document.getElementById("ganttAxis");
+      var w = axis && axis.clientWidth ? axis.clientWidth : 0;
+      if (!w) return 5;
+      var perYear = w / (GANTT_END - GANTT_START);
+      if (perYear >= 21) return 2;
+      if (perYear >= 11) return 5;
+      return 10;
+    }
+
     function renderGanttAxis() {
       var axis = document.getElementById("ganttAxis");
       if (!axis) return;
+      var step = ganttAxisStep();
       var html = "";
       for (var y = GANTT_END - 1; y >= GANTT_START + 2; y--) {
-        var top = y % 2 === 0 ? "top-0" : "top-[15px]";
-        html += '<span class="absolute ' + top + ' -translate-x-1/2" style="left:' + ((1 - ganttFrac(y)) * 100).toFixed(2) + '%">' + y + '</span>';
+        var since = GANTT_END - y;
+        if (y !== GANTT_END - 1 && y % step !== 0) continue;
+        var major = y % 10 === 0;
+        var cls = major ? "font-bold text-navy" : "text-slate";
+        var shift = y >= GANTT_END - 1 ? "-translate-x-0" : (y <= GANTT_START + 2 ? "-translate-x-full" : "-translate-x-1/2");
+        html += '<span class="absolute top-0 ' + shift + ' ' + cls + '" style="left:' + ((1 - ganttFrac(y)) * 100).toFixed(2) + '%">' + y + '</span>';
       }
       axis.innerHTML = html;
+    }
+
+    var ganttResizeTimer = null;
+    if (typeof window !== "undefined" && window.addEventListener) {
+      window.addEventListener("resize", function () {
+        if (ganttResizeTimer) clearTimeout(ganttResizeTimer);
+        ganttResizeTimer = setTimeout(function () {
+          if (document.getElementById("ganttRows")) renderGantt(document.documentElement.lang);
+        }, 150);
+      });
     }
 
     var currentGanttFilter = "all";
@@ -358,8 +383,8 @@
           }
         }
 
-        html += '<div class="mt-6 flex gap-6">';
-        html += '<div class="w-64 shrink-0">';
+        html += '<div class="mt-6 flex gap-4 sm:gap-6">';
+        html += '<div class="w-48 shrink-0 sm:w-64">';
         if (showMain) {
           html += '<p class="text-sm font-bold text-navy">' + ganttEsc(display) + '</p>';
           html += '<p class="mt-0.5 text-xs font-semibold text-accenttext">' + ganttEsc(period) + ' <span class="opacity-70">&middot;</span> ' + ganttEsc(t(type.badge, lang)) + '</p>';
